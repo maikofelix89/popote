@@ -1,0 +1,104 @@
+body{
+font-family: 'Stalemate', cursive;
+font-size: 100;
+-webkit-transition: 1s;
+
+}
+form{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+h2,p{
+font-family: 'Crimson Text', serif;
+font-size: 100;
+text-align: center;	
+}
+
+#hiw{
+	background-color: #f1f1f1;
+}
+h3{
+	font-family: 'Crimson Text', serif;
+font-size: 100;
+text-align: center;	
+
+}
+h1{
+	color:#255F0B;
+
+}
+
+.thumbnail{
+	box-shadow: 1px 1px 0px 0px;
+
+}
+
+
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+
+#myCarousel {
+	
+	background-color:#FFF;
+	
+}
+
+.carousel-caption {
+	font-size: 24px;
+}
+
+.carousel-caption h4 {
+	font-size: 32px;
+}
+
+#myCarousel .item { 
+	height:600px;
+	 }
+
+#slide1 {
+	background: url('../images/1.jpg') top center no-repeat;
+	background-size: cover;
+}
+
+#slide2 {
+	background: url('../images/8.jpg') top center no-repeat;
+	background-size: cover;
+}
+
+#slide3 {
+	background: url('../images/9.jpg') top center no-repeat;
+	background-size: cover;
+}
+
+
+
+/* --------------------------------------
+   buttons
+   -------------------------------------- */
+
+  .btn-primary{
+  	display: inline-block;
+  	background-color: #FFF;
+  	color: #255F0B;
+  	padding: 10px 10px 10px 10px;
+  	-webkit-transition :1s;
+
+  }
+
+  .btn-primary:hover{
+  	background-color: #FFF;
+  	color: #255F0B;
+  	transform:scale(1.5);
+  }
+  .btn-success{
+  	
+  	padding: 10px 10px 10px 10px;
+  	-webkit-transition :1s;
+
+  }
+.btn-success:hover{
+  	background-color: #FFF;
+  	color: #255F0B;
+  	transform:scale(1.5);
+  }
+

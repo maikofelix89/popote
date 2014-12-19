@@ -1,0 +1,52 @@
+body{
+background-image: url('../images/texture.png');
+font-family: 'Stalemate', cursive;
+font-size: 100;
+-webkit-transition: 1s;
+-moz-transition: 1s;
+color:#fff;
+
+}
+form{
+  font-family: 'Open Sans', sans-serif;
+}
+#content{
+      margin-top: 100px;
+      text-align: center;
+    }
+
+
+/* --------------------------------------
+   buttons
+   -------------------------------------- */
+
+  .btn-primary{
+  	display: inline-block;
+  	background-color: #FFF;
+  	color: #255F0B;
+  	padding: 10px 10px 10px 10px;
+  	-webkit-transition :1s;
+  	-moz-transition :1s;
+
+  }
+
+  .btn-primary:hover{
+  	background-color: #FFF;
+  	color: #255F0B;
+  	transform:scale(1.5);
+  }
+  .btn-success{
+  	
+  	padding: 10px 10px 10px 10px;
+  	-webkit-transition :1s;
+
+  }
+.btn-success:hover{
+  	background-color: #FFF;
+  	color: #255F0B;
+  	transform:scale(1.5);
+  }
+
+ .form-control{
+ 	border-radius: 8px;
+ }

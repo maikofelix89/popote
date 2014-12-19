@@ -1,0 +1,56 @@
+body{
+	background-image: url('../images/white.png')
+}
+
+#sidemenu{
+	margin-top: 100px;
+}
+body{
+	font-family: Ubuntu;
+}
+#mycontainer{
+margin-top: 50px;
+}
+#myform{
+margin-top: 100px;
+}
+#payment{
+	margin-top: 100px;
+	margin-left: 30px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+	background-color:#255F0B;
+}
+
+/* --------------------------------------
+   navbar
+   -------------------------------------- */
+
+ .navbar-inverse{
+ 	background-color:#FFF;
+ 	border-color:transparent;
+ }
+
+ .navbar-inverse .navbar-nav > li > a {
+color:#255F0B;
+font-size: 72;
+font-weight: 500px;
+font-family: 'Crimson Text', serif;
+-webkit-transition:0.5s;
+
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+background-color:#255F0B;
+color:#FFF;
+font-size: 72;
+font-weight: 500px;
+font-family: 'Crimson Text', serif;
+-webkit-transform:scale(1.1);
+
+}
+
+.navbar-brand{
+	padding: 5px 5px 5px 5px;
+}
+
