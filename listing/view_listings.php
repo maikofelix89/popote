@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,82 +27,112 @@
     <!-- jasny -->
      <link href="../jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet" media="screen">
     <link href="../jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <style type="text/css">
+    #content{
+        margin-top: 50px;
+    }
+
+    .thumbnail img{
+        max-height: 150px;
+        width:100%;
+    }
+
+    </style>
 </head>
 
 <body>
-	<!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.jsp" ><i class="fa fa-home"></i></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-left">
-                    <li>
-                        <a href="#">Dashboard<i class="fa  fa-users fa-fw"></i> <span class="network-name"></span> </a>
+	<?php include('../header/header.php'); ?>
 
-                    </li>
-                    <li>
-                        <a href="#">Inbox<i class="fa  fa-envelope fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
-                   
-
-                    <li>
-                    <a href="" data-toggle="dropdown" class="dropdown-toggle">Listings<i class="fa  fa-book fa-fw"></i> <span class="network-name"></span> <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-
-                                        <li><a href="post_listings.php">Post Listing</a></li>
-
-                                        <li><a href="mylistings.php">My Listing</a></li>
-                                        <li><a href="view_listings.php">Other Listings</a></li>
-
-                                        
-
-                    
-
-                                     </ul>
-                    </li>
-                    
-                    <li>
-                        <a href="#">Your Trips<i class="fa  fa-bus fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
-                    <li >
-                        <a href="#">Profile<i class="fa  fa-user fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
-                     <li>
-                        <a href="#">Account<i class="fa  fa-cogs fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
-                    
-                    
-                  
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <div class="row">
+    <div class="row" id="content">
     <div class="container">
     	
 
     	<div class=" col-md-offset-1 col-md-8">
         <h1 align="center">Listings</h1>
+
         <hr class="intro-divider" />
     
     </div>
 
   </div>
 </div>
+<div class="row">
+  <div class="container">
+    <?php
+    include_once("../connection/connection.php");
+
+  $MAX_REC_PER_PAGE=3;
+  
+  $rs = mysql_query("SELECT COUNT(*) FROM listings") or die("Count query error!");
+  list($total) = mysql_fetch_row($rs);
+  $total_pages = ceil($total / $MAX_REC_PER_PAGE);
+  $page = intval(@$_GET["page"]); 
+  if (0 == $page){
+  $page = 1;
+  }  
+  $start = $MAX_REC_PER_PAGE * ($page - 1);
+  $max = $MAX_REC_PER_PAGE;
+  $rs = mysql_query("SELECT * FROM listings ORDER BY id 
+   ASC LIMIT $start, $max") or die("query error!");
+ 
+
+ 
+  while ($row=mysql_fetch_array($rs)) {
+
+
+    $id=$row['id'];
+    $home_type=$row['home_type'];
+    $room_type=$row['room_type'];
+    $city=$row['city'];
+    $currency=$row['currency'];
+    $per_night=$row['per_night'];
+    $pricing_method=$row['pricing_method'];
+    $photo1=$row['photo1'];
+    $av_date=$row['av_date'];
+
+  
+  
+echo "
+<div class='col-md-3'>
+    <div class='thumbnail'>
+        <div class='caption'>
+            <h3>".$home_type."</h3>
+            <img src=".$photo1." class='img-responsive' />
+            <hr class='intro-divider' />
+            <p>Available from :".$av_date."</p>
+            <p>Room type: ".$room_type."</p>
+            <p>Location: ".$city."</p>
+            <p>Availability:Yes</p>
+            <p>Pricing:sh 1000 per night</p>
+        <a href='listing_details.php?id=".$id."' class='btn btn-primary btn-lg'>Details</a>
+        </div>
+    </div>
+
+</div>";
+
+}
+?>
+
+
+</div>
+</div>
+<table border="0" cellpadding="5" cellmargin="10" align="center">
+  <tr>
+  <td>Goto Page :</td>
+  <?php
+  for ($i = 1; $i <= $total_pages; $i++) {
+  $txt = $i;
+  if ($page != $i)
+  $txt = "<a href=\"" . $_SERVER["PHP_SELF"] . "?page=$i\">$txt</a>";
+  ?>  
+  <td align="center" class="btn btn-success btn-lg"><?= $txt ?></td>
+  <?php
+  }
+  ?>
+  
+  
+  
 
 
 

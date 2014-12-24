@@ -20,6 +20,8 @@
 
     <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -60,7 +62,7 @@
                         <a href="index.html">Listings<i class="fa  fa-book fa-fw"></i> <span class="network-name"></span> </a>
                     </li>
                     <li>
-                        <a href="index.html#services">Login<i class="fa  fa-power-off fa-fw"></i> <span class="network-name"></span> </a>
+                        <a href="#loginmodal" id="login1">Login<i class="fa  fa-power-off fa-fw"></i> <span class="network-name"></span> </a>
                     </li>
                     
 
@@ -96,6 +98,9 @@
 
             <div class="carousel-caption">
               <h2>POPOTE LISTINGS</h2>
+              <div class="container">
+              <img src="images/logo.png" class="img-responsive"/>
+            </div>
               <p>List your property and host international friends</p>
               <div class="btn btn-primary btn-lg"><a href="signup.html">Sign Up</a></div>
               <div class="btn btn-success btn-lg" id="login">Log In</div>
@@ -107,6 +112,9 @@
           <div class="item" id="slide2">
             <div class="carousel-caption">
               <h2>POPOTE LISTINGS</h2>
+              <div class="container">
+              <img src="images/logo.png" class="img-responsive"/>
+            </div>
               <p>Search and find a home away from home</p>
               <div class="btn btn-primary btn-lg">Sign Up</div>
               <div class="btn btn-success btn-lg">Log In</div>
@@ -118,6 +126,9 @@
           <div class="item" id="slide3">
             <div class="carousel-caption">
               <h2>POPOTE LISTINGS</h2>
+              <div class="container">
+              <img src="images/logo.png" class="img-responsive"/>
+            </div>
               <p>Create memories</p>
               <div class="btn btn-primary btn-lg">Sign Up</div>
               <div class="btn btn-success btn-lg">Log In</div>
@@ -137,9 +148,12 @@
           <h1 align="center">About Us</h1>
           <hr class="intro-divider" />
 
-          <p align="center">Popote listings helps people from all over the world who want 
-            to come and stay in our beautiful country maximise on their experience by allowing them to stay with the local people and interact and share in their culture.</p>
-            <p>It also helps the local people connect with friends from all over the world by enabling them to offer accomodation services to foreign guests.Thereby sharing their culture and creating new friends</p>
+          <p align="center">www.popotelistings.com is an online platform that connects hosts who have accommodations(any secure space ) to rent with guests seeking to rent such accommodations for short lets. www.popotelistings.com web platform links people from diverse cultural heritage to sample the home to home,culture to culture unique tastes and authentic travel experience across the African continent and beyond thus allowing you to mingle with Hosts and locals on an equal footing, to share their stories, sample their cuisine, make friends and take home beautiful memories.
+ 
+During your stay across East Africa,Africa and the world  the popote listings team will offer you complete support with our staff being on call 24 hours, ensuring your holiday/travel is enjoyable and problem free.  
+
+Our local hosts have a unique knowledge of the region’s local insights and its attractions and they assists guests in interacting with villagers giving them wonderful experiences off the beaten track. This provides the hosts with income and meaningful employment.
+</p>
 
 
         </div>
@@ -154,12 +168,95 @@
           <h1 align="center">How it Works</h1>
           <hr class="intro-divider" />
 
-          <p>Simply sign up and post your premesis details on the listing page if you are a home owner</p>
-          <p>For those looking for accomodation you can simply signup and search listings then proceed to apply</p>
 
+
+    <div id="myCarousel2" class="carousel slide" >
+
+        <!-- Carousel indicators -->
+
+        <ol class="carousel-indicators">
+
+            <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+
+            <li data-target="#myCarousel2" data-slide-to="1"></li>
+
+            <li data-target="#myCarousel2" data-slide-to="2"></li>
+
+        </ol>   
+
+        <!-- Carousel items -->
+
+        <div class="carousel-inner">
+
+            <div class="item active" id="slide12">
+
+                
+
+                <div class="carousel-caption">
+
+                  <h1>1.Check Availability</h1>
+                  <hr class="intro-divider"/>
+
+                  <p>The global communities of Hosts on popotelistings platform receive bookings on a request basis. After searching and getting your amazing destination   send the host a message with your specific dates. Once the host confirms they are available, you can book.</p>
+
+                </div>
+
+            </div>
+
+            <div class="item" id="slide22">
+
+               
+
+                <div class="carousel-caption">
+
+                  <h1>2.Complete your booking</h1>
+                  <hr class="intro-divider"/>
+
+                  <p>Once a host confirms they are available, you can complete your booking online. Click on the ‘Book Now ‘button of the Listing. Fill in your details and pay amount online to secure the booking. You’ll receive a confirmation email after you complete the payment process. It will include the payment receipt to be presented to the host on the day of check in and exact address and directions to the host, and your host’s email and telephone contact details.</p>
+
+                </div>
+
+            </div>
+
+            <div class="item" id="slide32">
+
+                
+
+                <div class="carousel-caption" >
+
+                  <h1>3.Travel to your chosen (Destination/Host)</h1>
+                  <hr class="intro-divider"/>
+
+                  <p>Pack your bags, it’s time to go! Let your host know in advance what time you expect to arrive at their home. Bring photo ID and a copy of your booking confirmation email.</p>
+
+                </div>
+
+            </div>
 
         </div>
-      </div><!-- end of container -->
+
+        <!-- Carousel nav -->
+
+        <a class="carousel-control left" href="#myCarousel2" data-slide="prev">
+
+            <span class="glyphicon glyphicon-chevron-left"></span>
+
+        </a>
+
+        <a class="carousel-control right" href="#myCarousel2" data-slide="next">
+
+            <span class="glyphicon glyphicon-chevron-right"></span>
+
+        </a>
+
+    </div>
+
+
+
+          
+
+        </div>
+      </div><!-- end of col -->
 
       </div><!-- end of how it works row -->
 
@@ -331,6 +428,11 @@
     $(document).ready(function(){
 
         $("#login").click(function(){
+
+            $("#loginmodal").modal('show');
+
+        });
+        $("#login1").click(function(){
 
             $("#loginmodal").modal('show');
 

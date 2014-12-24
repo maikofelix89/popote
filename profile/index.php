@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,55 +29,7 @@
 </head>
 
 <body>
-	<!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.jsp" ><i class="fa fa-home"></i></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-left">
-                    <li>
-                        <a href="#">Dashboard<i class="fa  fa-users fa-fw"></i> <span class="network-name"></span> </a>
-
-                    </li>
-                    <li>
-                        <a href="#">Inbox<i class="fa  fa-gears fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
-                   
-
-                    
-                    <li>
-                        <a href="#">Your Listings<i class="fa  fa-book fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
-                    <li>
-                        <a href="#">Your Trips<i class="fa  fa-bus fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
-                    <li class="active">
-                        <a href="#">Profile<i class="fa  fa-user fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
-                     <li>
-                        <a href="#">Account<i class="fa  fa-cogs fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
-                    
-                    
-                  
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+	<?php include_once('../header/header.php'); ?>
     <div class="row">
     <div class="container">
     	<div class="col-md-3" id="sidemenu">

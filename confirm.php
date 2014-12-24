@@ -26,14 +26,14 @@ while ($row= mysql_fetch_array($result) or die(mysql_error())) {
  VALUES (NULL, '$fname', '$lname', '$usrnm', '$email', '$pswd')";
 
 $result2=mysql_query($sql2) or die(mysql_error());
-header("location:../profile/profile.php");
+header("location:../profile/");
 	  
 	}
 
 }
 else {
 
-	header("location:signup.php");
+	header("location:signup/signup.php");
 
 }
 
