@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -88,7 +84,7 @@ session_start();
     $currency=$row['currency'];
     $per_night=$row['per_night'];
     $pricing_method=$row['pricing_method'];
-    $photo1=$row['photo1'];
+    $photo2=$row['photo2'];
     $av_date=$row['av_date'];
 
   
@@ -98,13 +94,13 @@ echo "
     <div class='thumbnail'>
         <div class='caption'>
             <h3>".$home_type."</h3>
-            <img src=".$photo1." class='img-responsive' />
+            <img src=".$photo2." class='img-responsive' />
             <hr class='intro-divider' />
             <p>Available from :".$av_date."</p>
             <p>Room type: ".$room_type."</p>
             <p>Location: ".$city."</p>
             <p>Availability:Yes</p>
-            <p>Pricing:sh 1000 per night</p>
+            <p>".$per_night."". $currency."".$pricing_method."</p>
         <a href='listing_details.php?id=".$id."' class='btn btn-primary btn-lg'>Details</a>
         </div>
     </div>

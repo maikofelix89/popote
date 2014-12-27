@@ -8,6 +8,7 @@ $date=$_POST['date'];
 $pricing=$_POST['pricing'];
 $currency=$_POST['currency'];
 $per_night=$_POST['per_night'];
+$id=$_POST['id'];
 
 $acc_details=$_POST['acc_details'];
 
@@ -34,8 +35,10 @@ move_uploaded_file($_FILES['photo3']['tmp_name'], $target_path3);
 
 
 $sql="INSERT INTO `popote`.`listings` (`id`, `user_id`, `home_type`, `room_type`, `no_guests`, `city`, `av_date`, `pricing_method`, `currency`, `per_night`, `photo1`, `photo2`, `photo3`, `description`) 
-VALUES (NULL, 'maiko','$hometype', '$roomtype', '$no_of_guests', '$city', '$date', '$pricing', '$currency', '$per_night', '$target_path1', '$target_path2', '$target_path3', '$acc_details')";
+VALUES (NULL, '$id','$hometype', '$roomtype', '$no_of_guests', '$city', '$date', '$pricing', '$currency', '$per_night', '$target_path1', '$target_path2', '$target_path3', '$acc_details')";
 $result=mysql_query($sql);
+
+header('location:view_listings.php');
 
 
 

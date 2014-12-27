@@ -18,7 +18,9 @@ $result=mysql_query($sql);
 $count=mysql_num_rows($result);
 
 
-echo $psword;
+while($row=mysql_fetch_array($result)){
+	$user_id=$row['perm_id'];
+}
 
 
 if($count==1){
@@ -26,6 +28,7 @@ session_start();
 $usrnm=$_POST['usrnm'];
 
 $_SESSION['usrnm']= $usrnm;
+$_SESSION['id']=$user_id;
 
 
 

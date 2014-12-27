@@ -5,6 +5,10 @@
  .navbar-inverse{
  	background-color:#FFF;
  	border-color:transparent;
+ 	border-style: solid;
+ 	border-color:#255F0B;
+
+
  }
 
  .navbar-inverse .navbar-nav > li > a {

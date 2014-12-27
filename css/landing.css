@@ -125,7 +125,7 @@ h1{
   	display: inline-block;
   	background-color: #FFF;
   	color: #255F0B;
-  	padding: 10px 10px 10px 10px;
+  	padding: 5px 5px 5px 5px;
   	-webkit-transition :1s;
 
   }
@@ -137,7 +137,7 @@ h1{
   }
   .btn-success{
   	
-  	padding: 10px 10px 10px 10px;
+  	padding: 5px 5px 5px 5px;
   	-webkit-transition :1s;
 
   }
@@ -147,3 +147,57 @@ h1{
   	transform:scale(1.5);
   }
 
+/* --------------------------------------
+   navbar
+   -------------------------------------- */
+
+
+
+.navbar-inverse{
+  background-color:#FFF;
+  border-color:transparent;
+  border-style: solid;
+  border-color:#255F0B;
+
+
+ }
+
+ .navbar-brand{
+  padding: 0px;
+ }
+
+ .navbar-inverse .navbar-nav > li > a {
+color:#255F0B;
+font-size: 72;
+font-weight: 500px;
+font-family: 'Crimson Text', serif;
+-webkit-transition:0.5s;
+
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+background-color:#255F0B;
+color:#FFF;
+font-size: 72;
+font-weight: 500px;
+font-family: 'Crimson Text', serif;
+-webkit-transform:scale(1.1);
+
+}
+
+
+.navbar-inverse .navbar-nav > .active>a {
+  background-color: #255F0B;
+}
+
+.intro-divider{
+  max-width: 400px;
+}
+
+/* --------------------------------------
+   footer
+   -------------------------------------- */
+
+.footer-below{
+  background-color: #255F0B;
+  color: #FFF;
+}

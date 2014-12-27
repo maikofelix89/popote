@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,7 +38,30 @@ session_start();
     <li><a href="#">Reviews</a></li>
 </ul>
     	</div>
+<?php
+require_once('../connection/connection.php');
+$my_id=$_SESSION['id'];
+echo $_SESSION['id'];
 
+$sql="SELECT * FROM `perm_user` WHERE perm_id='$my_id'";
+$result=mysql_query($sql);
+
+
+
+
+while($row=mysql_fetch_array($result)){
+
+    $GLOBALS['fname']=$row['fname'];
+    $l_name=$row['lname'];
+    $username=$row['usrnm'];
+    $email=$row['email'];
+    $password=$row['pswd'];
+
+}
+
+   
+
+?>
     	<div class="col-md-8">
     		<form role="form" id="myform" class="form-horizontal">
 
@@ -50,12 +70,13 @@ session_start();
 
 
                                         <div id="form_panel" class="panel-body">
+                                           
                                         <h1 align="middle">Details</h1>
                                                 <div id="sign-up-error" class="col-md-10 col-md-offset-1 alert-danger hidden"></div>
                                                 <div class="form-group">
                                                         <label class="col-md-4 control-label" for="f_name">First Name:</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" id="f_name" name="f_name">
+                                                  <input type='text' class='form-control' id='f_name' name='f_name' value="" />
                                 
 
                                 

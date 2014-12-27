@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Popote Listings</title>
 
+
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="css/landing.css">
-    <link rel="stylesheet" type="text/css" href="css/nav.css">
+
+    
+    
 
     <!-- fonts -->
     <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -46,23 +50,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" ><img src="images/logo.png" height="40"></a>
+                <a class="navbar-brand" href="#" ><img src="images/logo.png" height="50"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html#abtus">About<i class="fa  fa-users fa-fw"></i> <span class="network-name"></span> </a>
+                        <a href="index.html#abtus">About<span class="network-name"></span> </a>
 
                     </li>
                     <li>
-                        <a href="index.html#hiw">How it works<i class="fa  fa-gears fa-fw"></i> <span class="network-name"></span> </a>
+                        <a href="index.html#hiw">How it works <span class="network-name"></span> </a>
                     </li>
                     <li>
-                        <a href="index.html">Listings<i class="fa  fa-book fa-fw"></i> <span class="network-name"></span> </a>
+                        <a href="index.html">Listings<span class="network-name"></span> </a>
                     </li>
                     <li>
-                        <a href="#loginmodal" id="login1">Login<i class="fa  fa-power-off fa-fw"></i> <span class="network-name"></span> </a>
+                        <a href="#loginmodal" id="login1">Login<span class="network-name"></span> </a>
                     </li>
                     
 
@@ -97,13 +101,14 @@
           <div class="item active" id="slide1">
 
             <div class="carousel-caption">
-              <h2>POPOTE LISTINGS</h2>
+              
               <div class="container">
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <p>List your property and host international friends</p>
-              <div class="btn btn-primary btn-lg"><a href="signup.html">Sign Up</a></div>
-              <div class="btn btn-success btn-lg" id="login">Log In</div>
+              <hr class="intro-divider"  />
+              <div class="btn btn-primary btn-lg"><a href="signup.html"><p>Sign Up<p></a></div>
+              <div class="btn btn-success btn-lg" id="login"><p>Log In<p></div>
               <h4></h4>
               <p></p>
             </div><!-- end carousel-caption-->
@@ -111,13 +116,14 @@
           
           <div class="item" id="slide2">
             <div class="carousel-caption">
-              <h2>POPOTE LISTINGS</h2>
+              
               <div class="container">
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <p>Search and find a home away from home</p>
-              <div class="btn btn-primary btn-lg">Sign Up</div>
-              <div class="btn btn-success btn-lg">Log In</div>
+              <hr class="intro-divider"  />
+              <div class="btn btn-primary btn-lg"><p>Sign Up</p></div>
+              <div class="btn btn-success btn-lg"><p>Log In</p></div>
               <h4></h4>
               <p></p>
             </div><!-- end carousel-caption-->
@@ -125,13 +131,14 @@
           
           <div class="item" id="slide3">
             <div class="carousel-caption">
-              <h2>POPOTE LISTINGS</h2>
+              
               <div class="container">
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <p>Create memories</p>
-              <div class="btn btn-primary btn-lg">Sign Up</div>
-              <div class="btn btn-success btn-lg">Log In</div>
+              <hr class="intro-divider"  />
+              <div class="btn btn-primary btn-lg"><p>Sign Up</p></div>
+              <div class="btn btn-success btn-lg"><p>Log In</p></div>
               <h4></h4>
               <p></p>
             </div><!-- end carousel-caption-->
@@ -147,13 +154,25 @@
         <div class="col-sm-12">
           <h1 align="center">About Us</h1>
           <hr class="intro-divider" />
+          <div class="container">
 
-          <p align="center">www.popotelistings.com is an online platform that connects hosts who have accommodations(any secure space ) to rent with guests seeking to rent such accommodations for short lets. www.popotelistings.com web platform links people from diverse cultural heritage to sample the home to home,culture to culture unique tastes and authentic travel experience across the African continent and beyond thus allowing you to mingle with Hosts and locals on an equal footing, to share their stories, sample their cuisine, make friends and take home beautiful memories.
+          <p>www.popotelistings.com is an online platform that connects hosts
+           who have accommodations(any secure space ) to rent with guests seeking to rent such 
+           accommodations for short lets. 
+           <p>www.popotelistings.com web platform links people from 
+           diverse cultural heritage to sample the home to home,culture to culture unique tastes and 
+           authentic travel experience across the African continent and beyond thus allowing you to 
+           mingle with Hosts and locals on an equal footing, to share their stories, sample their cuisine,
+            make friends and take home beautiful memories.</p>
  
-During your stay across East Africa,Africa and the world  the popote listings team will offer you complete support with our staff being on call 24 hours, ensuring your holiday/travel is enjoyable and problem free.  
+<p>During your stay across East Africa,Africa and the world  the popote listings team will offer you 
+complete support with our staff being on call 24 hours, ensuring your holiday/travel is enjoyable
+ and problem free. </p> 
 
-Our local hosts have a unique knowledge of the region’s local insights and its attractions and they assists guests in interacting with villagers giving them wonderful experiences off the beaten track. This provides the hosts with income and meaningful employment.
+<p>Our local hosts have a unique knowledge of the region’s local insights and its attractions and they assists guests in interacting with villagers giving them wonderful 
+  experiences off the beaten track. This provides the hosts with income and meaningful employment.</p>
 </p>
+</div>
 
 
         </div>
@@ -323,18 +342,18 @@ Our local hosts have a unique knowledge of the region’s local insights and its
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                    <h3>Social media</h3>
+                    <h3></h3>
                     <ul class="list-inline intro-social-buttons">
                             <li>
-                                <a href="https://twitter.com" ><i class="fa fa-twitter fa-fw"></i> <span class="network-name"></span></a>
+                                <a href="https://twitter.com" ><i class="fa fa-twitter fa-3x"></i> <span class="network-name"></span></a>
                             </li>
                             
 
                             <li>
-                                <a href="https://facebook.com"><i class="fa fa-facebook fa-fw"></i> <span class="network-name"></span></a>
+                                <a href="https://facebook.com"><i class="fa fa-facebook fa-3x"></i> <span class="network-name"></span></a>
                             </li>
                             <li>
-                                <a href="https://facebook.com"><i class="fa  fa-google-plus fa-fw"></i> <span class="network-name"></span></a>
+                                <a href="https://facebook.com"><i class="fa  fa-google-plus fa-3x"></i> <span class="network-name"></span></a>
                             </li>
                             <li>
                                 <a href="https://www.linkedin.com/"><i class="fa  fa-linkedin fa-fw"></i> <span class="network-name"></span></a>

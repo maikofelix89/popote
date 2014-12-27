@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+
+
+
+
+
+?>
+
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -13,13 +23,20 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-left">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="#">Dashboard<i class="fa  fa-users fa-fw"></i> <span class="network-name"></span> </a>
 
                     </li>
                     <li>
-                        <a href="#">Inbox<i class="fa  fa-envelope fa-fw"></i> <span class="network-name"></span> </a>
+                        <a href="#"><i class="fa  fa-envelope fa-fw"><i class="badge"><?php 
+                        require_once('../connection/connection.php');
+                       $user= $_SESSION['id'];
+                        $sql="SELECT * FROM `messages` WHERE recepient='$user'";
+$result=mysql_query($sql);
+$count=mysql_num_rows($result);
+
+                        echo $count ?></i></i><span class="network-name"></span> </a>
                     </li>
                    
 
@@ -27,10 +44,25 @@
                     <a href="" data-toggle="dropdown" class="dropdown-toggle">Listings<i class="fa  fa-book fa-fw"></i> <span class="network-name"></span> <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
 
-                                        <li><a href="post_listing.php">Post Listing</a></li>
+                                        <li><a href="../listing/post_listing.php">Post Listing</a></li>
 
-                                        <li><a href="mylistings.php">My Listing</a></li>
+                                        <li><a href="../listing/mylistings.php">My Listing</a></li>
                                         <li><a href="view_listings.php">Other Listings</a></li>
+
+                                        
+
+                    
+
+                                     </ul>
+                    </li>
+                    <li>
+                    <a href="" data-toggle="dropdown" class="dropdown-toggle">Account<i class="fa  fa-cogs fa-fw"></i> <span class="network-name"></span> <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+
+                                        <li><a href="../profile/index.php">Profile</a></li>
+
+                                        <li><a href="mylistings.php">Settings</a></li>
+                                        
 
                                         
 
@@ -47,16 +79,14 @@
                             echo "<a href='../index.php'>Log In<i class='fa  fa-power-off fa-fw'></i> <span class='network-name'></span> </a>";
      
 } else{
-   echo "<a href='#''>".$_SESSION['usrnm']."<i class='fa  fa-power-off fa-fw'></i> <span class='network-name'></span> </a>
+   echo "<a href='#''>".$_SESSION['usrnm']."<i class='fa  fa-user fa-fw'></i> <span class='network-name'></span> </a>
    <li>
     <a href='../logout/logout.php'>Log Out<i class='fa  fa-power-off fa-fw'></i> <span class='network-name'></span> </a>
                     </li>";
 
 } ?>
                     </li>
-                     <li>
-                        <a href="#">Account<i class="fa  fa-cogs fa-fw"></i> <span class="network-name"></span> </a>
-                    </li>
+                    
                     
                     
                   

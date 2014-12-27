@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -199,7 +196,15 @@ session_start();
                   <textarea class="form-control input-sm" rows="3" name="acc_details" id="material-offer-details" placeholder="Give your offer description"></textarea>
                 </div>
               </div>
-                                                
+             <?php echo "<div class='form-group' style='display:none'>
+                        <label class='col-md-4 control-label'></label>
+                        
+                  <div class='col-md-6'>
+                                       <input type='text' class='form-control' name='id' value=".$_SESSION['id']." /> 
+                            
+                                    </div>    
+                </div>"; ?>
+                                             
                                                
                         
                         <div class="form-group">
