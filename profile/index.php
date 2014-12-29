@@ -32,8 +32,8 @@
     	<div class="col-md-3" id="sidemenu">
     		<ul class="nav nav-pills nav-stacked">
     <li class="active"><a href="#">Edit Profile</a></li>
-    <li><a href="#">Photo</a></li>
-    <li><a href="#">Messages</a></li>
+    <li><a href="../profile/photo.php">Photo</a></li>
+    
     <li><a href="#">Verification</a></li>
     <li><a href="#">Reviews</a></li>
 </ul>
@@ -41,7 +41,7 @@
 <?php
 require_once('../connection/connection.php');
 $my_id=$_SESSION['id'];
-echo $_SESSION['id'];
+
 
 $sql="SELECT * FROM `perm_user` WHERE perm_id='$my_id'";
 $result=mysql_query($sql);
@@ -63,7 +63,7 @@ while($row=mysql_fetch_array($result)){
 
 ?>
     	<div class="col-md-8">
-    		<form role="form" id="myform" class="form-horizontal">
+    		<form role="form" id="myform" class="form-horizontal" action="../profile/update_prof.php" method="POST" enctype="multipart/form-data">
 
 
                                 
@@ -96,24 +96,24 @@ while($row=mysql_fetch_array($result)){
                                                         </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-4 control-label" for="username">Preferred Username:</label>
+                                                    <label class="col-md-4 control-label" for="username">Username:</label>
                                                     <div class="col-md-6">
                                                         <input type="text" class="form-control" name="username" id="username">
-                                                        <span id="checking-username" class="hidden"> </span>
+                                                       
                                                     </div>
                                                     
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-4 control-label" for="email">Primary Email:</label>
+                                                    <label class="col-md-4 control-label" for="email">Email:</label>
                                                     <div class="col-md-6">
                                                         <input type="text" class="form-control" name="email" id="email">
-                                                        <span id="checking-email" class="hidden"></span>
+                                                       
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label" for="password">Gender:</label>
                                                     <div class="col-md-6">
-                                                    <select class="form-control ">
+                                                    <select class="form-control" name="gender">
                                                     <option>Male</option>
                                                     <option>Female</option>
                                                     </select>
@@ -121,9 +121,9 @@ while($row=mysql_fetch_array($result)){
                                                 
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-4 control-label" for="r_password">Re-type Password:</label>
+                                                    <label class="col-md-4 control-label" for="password">Password:</label>
                                                     <div class="col-md-6">
-                                                        <input type="password" class="form-control" name="r_password" id="r_password">
+                                                        <input type="password" class="form-control" name="password" id="password">
                                                     </div>
                                                 </div>
 
@@ -131,27 +131,26 @@ while($row=mysql_fetch_array($result)){
 												<label class="col-md-4 control-label" for="r_password">Date of Birth</label>
 												<div class="col-md-6">
 												
-												<input id='demo1' name="date"  class="form-control" type='text' size='25'><a href="javascript:NewCal('demo1','ddmmyyyy')"><img src="../datepicker/cal.gif" width="" height="" border="0" alt="Pick a date"></input>
+												<input id="demo1" name="date"  class="form-control" type="text" size='25'><a href="javascript:NewCal('demo1','ddmmyyyy')"><img src="../datepicker/cal.gif" width="" height="" border="0" alt="Pick a date"></a></input>
 
 											</div>
 												
 											</div>
-                                                <div class="form-group has-feedback">
-                                                <div class="col-md-3 col-sm-offset-5">
-                                                    <div class="checkbox">
-                                                            <input type="checkbox" name="acceptTerms" data-bv-field="acceptTerms">
-                                                            <i class="form-control-feedback" data-bv-field="acceptTerms"></i>
-                                                             Accept the <a href="terms-conditions">terms and policies</a>
-                                                    </div>
-                                                </div>
-
-                                                </div>
+                                               
                                                
                                         </div>
                                         <div class="form-group">
+                                                    <label class="col-md-4 control-label" for="telno">Telno</label>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control" name="telno" id="telno" />
+                                                       
+                                                    </div>
+                                                    
+                                                </div>
+                                        <div class="form-group">
                                         	<label class="col-md-4 control-label" for="sumit"></label>
-                                            <button type="submit"  class="btn btn-danger custom-btn-submit" id="submit-btn">Submit</button>                
-                                            <a href="../login" class="btn btn-success custom-btn-submit hidden" id="logon">Login</a>
+                                            <button type="submit"  class="btn btn-danger custom-btn-submit" id="submit-btn">Update</button>                
+                                           
                                         </div>
                                 </form>
     	</div>

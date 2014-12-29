@@ -22,7 +22,7 @@
 
     <style type="text/css">
     #content{
-    	margin-top: 60px;
+    	margin-top: 100px;
     }
      #host img{
         max-height: 200px;
@@ -32,15 +32,52 @@
 
   </head>
   <body>
+
 <?php include_once('../header/header.php'); ?>
 <div class="container" id="content">
-	<div class="row">
-		<div class="col-md-4">
-		<div class="thumbnail" id="host">
-			<div class="caption">
-				<h2>Host Details</h2>
-				<hr class="intro-divider" />
-				<img src="../images/maiko.jpg"   class="img-responsive img-rounded"/>
+    <div class="row">
+        <div class="col-md-4">
+        <div class="thumbnail" id="host">
+            <div class="caption">
+                <h2>Host Details</h2>
+                <hr class="intro-divider" />
+<?php 
+$id=$_GET['id'];
+
+$sql="SELECT * FROM `listings` WHERE id='$id'";
+$result=mysql_query($sql);
+
+
+
+
+while($row=mysql_fetch_array($result)){
+   $GLOBALS['user_id'] =$row['user_id']; 
+
+
+
+$sql2="SELECT * FROM `perm_user` WHERE perm_id='$user_id'";
+$result2=mysql_query($sql2);
+while($row2=mysql_fetch_array($result2)){
+    $GLOBALS['fname']=$row2['fname'];
+    $pic=$row2['pic'];
+    $tel=$row2['tel_no'];
+    $email=$row2['email'];
+   
+   
+
+    }
+}
+    ?>
+
+	<?php echo "<img src=".$pic."   class='img-responsive img-rounded'/><br>
+    Tel no: ".$tel."<br>
+    Email: ".$email."
+
+
+    "
+
+
+    ; ?>
 			</div>
 		</div>
 	   </div>
@@ -94,12 +131,7 @@ while($row=mysql_fetch_array($result)){
            
 }
 
-$sql2="SELECT * FROM `perm_user` WHERE perm_id='$user_id'";
-$result2=mysql_query($sql2);
-while($row2=mysql_fetch_array($result2)){
-    $GLOBALS['fname']=$row2['fname'];
 
-    }
 
 ?> 
 				   <h2>Description</h2>
@@ -164,7 +196,7 @@ while($row2=mysql_fetch_array($result2)){
 
         <div class="form-group">
 
-            <label for="inputEmail">user</label>
+            <label for="inputEmail">To:</label>
 
         <?php echo  "<input type='text' class='form-control' id='inputEmail' name='fname' value='".$fname."' readonly />"; ?>
             

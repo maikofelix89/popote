@@ -19,7 +19,7 @@ session_start();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.jsp" ><i class="fa fa-home"></i></a>
+                <a class="navbar-brand" href="index.jsp" ><img src="../images/logo.png" height="50"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -29,10 +29,13 @@ session_start();
 
                     </li>
                     <li>
-                        <a href="#"><i class="fa  fa-envelope fa-fw"><i class="badge"><?php 
+                        <a href="../message/view_message.php"><i class="fa  fa-envelope fa-fw"><i class="badge"><?php 
                         require_once('../connection/connection.php');
                        $user= $_SESSION['id'];
-                        $sql="SELECT * FROM `messages` WHERE recepient='$user'";
+                       $read="f";
+                       
+                        $sql="SELECT * FROM `messages` WHERE `recepient` = '$user' && `read` = 'f'";
+                        
 $result=mysql_query($sql);
 $count=mysql_num_rows($result);
 
@@ -47,7 +50,7 @@ $count=mysql_num_rows($result);
                                         <li><a href="../listing/post_listing.php">Post Listing</a></li>
 
                                         <li><a href="../listing/mylistings.php">My Listing</a></li>
-                                        <li><a href="view_listings.php">Other Listings</a></li>
+                                        <li><a href="../listing/view_listings.php">Other Listings</a></li>
 
                                         
 
