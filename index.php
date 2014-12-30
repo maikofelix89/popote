@@ -24,7 +24,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,50 +39,7 @@
 
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#" ><img src="images/logo.png" height="50"></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html#abtus">About<span class="network-name"></span> </a>
-
-                    </li>
-                    <li>
-                        <a href="index.html#hiw">How it works <span class="network-name"></span> </a>
-                    </li>
-                    <li>
-                        <a href="index.html">Listings<span class="network-name"></span> </a>
-                    </li>
-                    <li>
-                        <a href="#loginmodal" id="login1">Login<span class="network-name"></span> </a>
-                    </li>
-                    
-
-                                        
-
-                    
-
-                                     
-                    
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+   <?php include_once('header/landing_header.php'); ?>
       
       
       <div class="carousel slide" id="myCarousel">
@@ -105,7 +62,7 @@
               <div class="container">
               <img src="images/logo.png" class="img-responsive"/>
             </div>
-              <p>List your property and host international friends</p>
+              <h3>List your property and host international friends</h3>
               <hr class="intro-divider"  />
               <div class="btn btn-primary btn-lg"><a href="signup.html"><p>Sign Up<p></a></div>
               <div class="btn btn-success btn-lg" id="login"><p>Log In<p></div>
@@ -120,7 +77,7 @@
               <div class="container">
               <img src="images/logo.png" class="img-responsive"/>
             </div>
-              <p>Search and find a home away from home</p>
+              <h3>Search and find a home away from home</h3>
               <hr class="intro-divider"  />
               <div class="btn btn-primary btn-lg"><p>Sign Up</p></div>
               <div class="btn btn-success btn-lg"><p>Log In</p></div>
@@ -135,7 +92,7 @@
               <div class="container">
               <img src="images/logo.png" class="img-responsive"/>
             </div>
-              <p>Create memories</p>
+              <h3>Create memories</h3>
               <hr class="intro-divider"  />
               <div class="btn btn-primary btn-lg"><p>Sign Up</p></div>
               <div class="btn btn-success btn-lg"><p>Log In</p></div>
@@ -185,6 +142,7 @@ complete support with our staff being on call 24 hours, ensuring your holiday/tr
         <div class="col-sm-12">
           <div class="container">
           <h1 align="center">How it Works</h1>
+          
           <hr class="intro-divider" />
 
 
@@ -280,14 +238,17 @@ complete support with our staff being on call 24 hours, ensuring your holiday/tr
       </div><!-- end of how it works row -->
 
       <div class="row"><!-- success row -->
-        <div class="col-sm-12">
+       <h1 align="center">Photos</h1>
+       <hr class="intro-divider" />
+        <h2 align="center">Tourists mingling with the local people freely</h2>
+
           <div class="container">
-          <h1 align="center">Photos</h1>
+          
 
-          <hr class="intro-divider" />
-          <p>Tourists mingling with the local people freely</p>
+          
+         
+          <div class="col-sm-4">
 
-          <div class="col-sm-8">
           <div class="thumbnail">
             <img src="images/4.jpg" class="img-responsive" />
 
@@ -302,23 +263,23 @@ complete support with our staff being on call 24 hours, ensuring your holiday/tr
           </div>
         </div>
 
-        <div class="col-sm-5">
+        <div class="col-sm-4">
           <div class="thumbnail">
             <img src="images/5.jpg" class="img-responsive" />
 
           </div>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <div class="thumbnail">
             <img src="images/6.jpg" class="img-responsive" />
 
           </div>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <div class="thumbnail">
-            <img src="images/7.jpg" class="img-responsive" />
+            <img src="images/samburu.jpg" class="img-responsive" />
 
           </div>
         </div>
@@ -326,10 +287,73 @@ complete support with our staff being on call 24 hours, ensuring your holiday/tr
           
 
 
-        </div>
+       
       </div><!-- end of container -->
 
       </div><!-- end of about us row -->
+
+      <div class="row" id="popular">
+        <h1 align="center">Some of Listings</h1>
+        <hr class="intro-divider" />
+
+        <?php
+    include_once("connection/connection.php");
+
+  $MAX_REC_PER_PAGE=9;
+  
+  $rs = mysql_query("SELECT COUNT(5) FROM listings") or die("Count query error!");
+  list($total) = mysql_fetch_row($rs);
+  $total_pages = ceil($total / $MAX_REC_PER_PAGE);
+  $page = intval(@$_GET["page"]); 
+  if (0 == $page){
+  $page = 1;
+  }  
+  $start = $MAX_REC_PER_PAGE * ($page - 1);
+  $max = $MAX_REC_PER_PAGE;
+  $rs = mysql_query("SELECT * FROM listings ORDER BY id 
+   ASC LIMIT $start, $max") or die("query error!");
+ 
+
+ 
+  while ($row=mysql_fetch_array($rs)) {
+
+
+    $id=$row['id'];
+    $home_type=$row['home_type'];
+    $room_type=$row['room_type'];
+    $city=$row['city'];
+    $currency=$row['currency'];
+    $per_night=$row['per_night'];
+    $pricing_method=$row['pricing_method'];
+    $photo2=$row['photo2'];
+    $av_date=$row['av_date'];
+
+  
+  
+echo "
+<div class='col-md-4'>
+    
+       
+           <div class='thumbnail'>
+           <div class='caption'>
+            <p>".$city."</p>
+            <p>".$per_night."".$currency."".$pricing_method."</p>
+           </div>
+           
+            <a href='listing/listing_details.php?id=".$id."'><img src='".$photo2."' class='img-responsive' /></a>
+            </div>
+
+           
+        
+  
+
+</div>";
+
+}
+?>
+
+
+      </div>
 
 
 
@@ -364,9 +388,9 @@ complete support with our staff being on call 24 hours, ensuring your holiday/tr
 
                         
 
-                           <p><a href="">Terms and condions apply</a></p>   
+                           <p><a href="terms/terms.php">Terms and conditions</a></p>   
                             
-                        Copyright &copy;Popote Listings 2014
+                        <p>Copyright &copy;Popote Listings 2014<p>
                     </div>
                 </div>
             </div>

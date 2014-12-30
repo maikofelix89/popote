@@ -1,7 +1,8 @@
 body{
-font-family: 'Stalemate', cursive;
-font-size: 100;
--webkit-transition: 1s;
+
+font-family: 'Crimson Text', serif;
+
+text-align: center; 
 
 }
 form{
@@ -9,16 +10,18 @@ form{
 }
 h2{
 font-family: 'Crimson Text', serif;
-font-size: 100;
+font-size: 80;
 text-align: center;	
 }
 
 p{
-  font-family: 'Open Sans', sans-serif;
+font-family: 'Crimson Text', serif;
+font-size: 20px;
+text-align: center; 
 }
 
 #hiw{
-	background-color: #f1f1f1;
+	background-color: #fcfcfc;
 }
 h3{
 	font-family: 'Crimson Text', serif;
@@ -28,13 +31,26 @@ text-align: center;
 }
 h1{
 	color:#255F0B;
+  font-size:50px !important;
+  font-family: 'Stalemate', cursive;
 
 }
 
-.thumbnail{
-	box-shadow: 1px 1px 0px 0px;
-
+#content{
+  margin-top: 100px;
 }
+
+/* --------------------------------------
+   thumbnail
+   -------------------------------------- */
+
+  .thumbnail img{
+    width:100%;
+    height:100%;
+  }
+  .thumbnail{
+    height: 250px;
+  }
 
 
 /* --------------------------------------
@@ -77,7 +93,7 @@ h1{
 }
 
 #slide3 {
-	background: url('../images/19.jpg') top center no-repeat;
+	background: url('../images/train.jpg') top center no-repeat;
 	background-size: cover;
 }
 
@@ -108,7 +124,7 @@ h1{
 }
 
 #slide32 {
-  background: url('../images/16.jpg') top center no-repeat;
+  background: url('../images/travel2.jpg') top center no-repeat;
   background-size: cover;
 }
 
@@ -154,7 +170,7 @@ h1{
 
 
 .navbar-inverse{
-  background-color:#FFF;
+  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.95);
   border-color:transparent;
   border-style: solid;
   border-color:#255F0B;
@@ -201,3 +217,18 @@ font-family: 'Crimson Text', serif;
   background-color: #255F0B;
   color: #FFF;
 }
+
+/* --------------------------------------
+   popular
+   -------------------------------------- */
+
+  
+
+   #popular img{
+    width:100%;
+    height:70%;
+   }
+
+   #popular{
+    background-color: #fcfcfc;
+   }

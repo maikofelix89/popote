@@ -41,7 +41,9 @@
             <div class="caption">
                 <h2>Host Details</h2>
                 <hr class="intro-divider" />
-<?php 
+
+<?php if (isset($_SESSION['usrnm'])) {
+
 $id=$_GET['id'];
 
 $sql="SELECT * FROM `listings` WHERE id='$id'";
@@ -62,6 +64,7 @@ while($row2=mysql_fetch_array($result2)){
     $pic=$row2['pic'];
     $tel=$row2['tel_no'];
     $email=$row2['email'];
+    $lname=$row2['lname'];
    
    
 
@@ -69,15 +72,23 @@ while($row2=mysql_fetch_array($result2)){
 }
     ?>
 
-	<?php echo "<img src=".$pic."   class='img-responsive img-rounded'/><br>
+	<?php echo "<img src='".$pic."'   class='img-responsive img-rounded' alt='user has no image yet'/><br>
+    Name: ".$fname."&nbsp".$lname."<br>
     Tel no: ".$tel."<br>
-    Email: ".$email."
+    Email: ".$email."<br>
+    
 
 
     "
 
 
-    ; ?>
+    ; }
+
+    else{
+        echo "you need to login to view host details";
+
+
+}?>
 			</div>
 		</div>
 	   </div>
@@ -119,8 +130,9 @@ while($row=mysql_fetch_array($result)){
             <div class='row'>
             
             
-            <img src=".$photo2."  height='150' width='auto' />
-            <img src=".$photo3."  height='150' width='auto' />
+            <img src='../".$photo2."'  height='150' width='auto' />
+            <img src='../".$photo3."'  height='150' width='auto' />
+            <img src='../".$photo1."'  height='150' width='auto' />
            
 
 
@@ -149,7 +161,7 @@ while($row=mysql_fetch_array($result)){
 				<div class="panel panel-default">
 			  <div class="panel-heading">Other Listings by the User</div>
 			  <div class="panel-body">
-				    Panel content
+				    
 				  </div>
 			</div>
 
@@ -196,9 +208,16 @@ while($row=mysql_fetch_array($result)){
 
         <div class="form-group">
 
-            <label for="inputEmail">To:</label>
+            
+            <?php if (isset($_SESSION['usrnm'])) {
 
-        <?php echo  "<input type='text' class='form-control' id='inputEmail' name='fname' value='".$fname."' readonly />"; ?>
+         echo  "<label for='inputEmail'>To:</label><input type='text' class='form-control' id='inputEmail' name='fname' value='".$fname."' readonly />";}
+
+            else{ echo "please log in to send message";
+
+         } ?>
+
+         
             
 
         </div>
@@ -219,9 +238,15 @@ while($row=mysql_fetch_array($result)){
             
 
         </div>
+     <?php if (isset($_SESSION['usrnm'])) {
 
         
-        <button type="submit"  class="btn btn-danger custom-btn-submit" id="submit-btn">Send Message</button>
+        echo "<button type='submit'  class='btn btn-danger custom-btn-submit' id='submit-btn'>Send Message</button>";
+
+    }
+    else{
+            echo"";
+    }?>
 
     </form>
 

@@ -38,7 +38,7 @@ header("location:../listing/view_listings.php");
 }
 else {
 echo "Wrong Username or Password";
-header("location:../index.html");
+header("location:../login/alt_login.php");
 }
 ob_end_flush();
 ?>

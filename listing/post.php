@@ -13,7 +13,7 @@ $id=$_POST['id'];
 $acc_details=$_POST['acc_details'];
 
 
-$target_path = "../images/";
+$target_path = "images/";
 $target_path1 = $target_path . basename( $_FILES['photo1']['name']); 
 $target_path2 = $target_path . basename( $_FILES['photo2']['name']);
 $target_path3 = $target_path . basename( $_FILES['photo3']['name']);

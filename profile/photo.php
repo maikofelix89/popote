@@ -32,12 +32,11 @@
     <div class="container">
       <div class="col-md-3" id="sidemenu">
         <ul class="nav nav-pills nav-stacked">
-    <li><a href="#">Edit Profile</a></li>
-    <li class="active"><a href="../profile/photo.php">Photo</a></li>
-    
-    <li><a href="#">Verification</a></li>
-    <li><a href="#">Reviews</a></li>
-</ul>
+                <li ><a href="../profile/index.php">Edit Profile</a></li>
+                <li class="active"><a href="../profile/photo.php">Photo</a></li>
+                <li ><a href="../profile/myprofile.php">My Profile</a></li>
+                 <li><a href="#">Reviews</a></li>
+            </ul>
       </div>
 <?php
 require_once('../connection/connection.php');

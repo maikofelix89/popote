@@ -19,6 +19,7 @@
 
     <!-- goofle fonts -->
 <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
 
     <!-- jasny -->
      <link href="../jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet" media="screen">
@@ -92,11 +93,11 @@
   
   
 echo "
-<div class='col-md-3'>
+<div class='col-md-4'>
     <div class='thumbnail'>
         <div class='caption'>
             <h3>".$home_type."</h3>
-            <img src=".$photo2." class='img-responsive' />
+            <img src='../".$photo2."' class='img-responsive' />
             <hr class='intro-divider' />
             <p>Available from :".$av_date."</p>
             <p>Room type: ".$room_type."</p>

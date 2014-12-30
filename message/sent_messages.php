@@ -55,9 +55,7 @@ $id=$_SESSION['id'];
 $sql="SELECT * FROM `messages` WHERE sender='$id' ORDER BY `message_id` DESC ";
 $result=mysql_query($sql);
 
-$sql3="UPDATE `popote`.`messages` SET `read` = 't' WHERE `sender` =$id";
 
-$result3=mysql_query($sql3);
 
 
 

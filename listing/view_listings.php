@@ -20,6 +20,7 @@
     <!-- goofle fonts -->
 <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 
+
     <!-- jasny -->
      <link href="../jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet" media="screen">
     <link href="../jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
@@ -29,11 +30,7 @@
         margin-top: 50px;
     }
 
-    .thumbnail img{
-        max-height: 150px;
-        width:100%;
-    }
-
+    
     </style>
 </head>
 
@@ -58,7 +55,7 @@
     <?php
     include_once("../connection/connection.php");
 
-  $MAX_REC_PER_PAGE=3;
+  $MAX_REC_PER_PAGE=9;
   
   $rs = mysql_query("SELECT COUNT(*) FROM listings") or die("Count query error!");
   list($total) = mysql_fetch_row($rs);
@@ -90,11 +87,11 @@
   
   
 echo "
-<div class='col-md-3'>
+<div class='col-md-4'>
     <div class='thumbnail'>
         <div class='caption'>
             <h3>".$home_type."</h3>
-            <img src=".$photo2." class='img-responsive' />
+            <img src='../".$photo2."' class='img-responsive' />
             <hr class='intro-divider' />
             <p>Available from :".$av_date."</p>
             <p>Room type: ".$room_type."</p>
