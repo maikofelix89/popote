@@ -34,7 +34,7 @@ $_SESSION['id']=$user_id;
 
 
 
-header("location:../listing/view_listings.php");
+header("location:../");
 }
 else {
 echo "Wrong Username or Password";

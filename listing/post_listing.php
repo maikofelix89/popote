@@ -19,14 +19,26 @@
 
     <!-- goofle fonts -->
 <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+ 
+ <!-- bootstrap date-picker css -->
 
-    <!-- jasny -->
+<link rel="stylesheet" href="../bootstrap-datepicker/css/datepicker.css">
+    
+  <!-- jasny -->
      <link href="../jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet" media="screen">
     <link href="../jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
-	<?php include('../header/header.php'); ?>
+	<?php include('../header/header.php'); 
+
+  if (!isset($_SESSION['usrnm'])) {
+
+  header('location:../login/login.php');
+
+
+  } ?>
+
 
     <div class="row">
     <div class="container">
@@ -101,8 +113,8 @@
                     <div class="form-group">
                            <label class="col-md-4 control-label" for="r_password">Available From</label>
                         <div class="col-md-6">
-                            <input id="demo1" name="date"  class="form-control" type='text' size='25'>
-                            <a href="javascript:NewCal('demo1','ddmmyyyy')"><img src="../datepicker/cal.gif" width="" height="" border="0" alt="Pick a date"></a>
+                            <input id="demo1" name="date"  class="form-control" type='text' data-provide="datepicker" size='25'>
+                            
                            </input>
 
                             </div>
@@ -232,5 +244,19 @@
 <!-- jasny -->
     <script src="../jasny-bootstrap/js/jasny-bootstrap.js"></script>
     <script src="../jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+
+<!-- bootstrap date-picker js -->
+
+    <script src="../bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript">
+      $('#demo1').datepicker({
+   
+    startDate: '-d'
+})
+
+ 
+    </script>
+
 </body>
 </html>

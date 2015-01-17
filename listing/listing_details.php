@@ -18,7 +18,7 @@
     <link href="../font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- goofle fonts -->
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
     <style type="text/css">
     #content{
@@ -75,7 +75,8 @@ while($row2=mysql_fetch_array($result2)){
 	<?php echo "<img src='".$pic."'   class='img-responsive img-rounded' alt='user has no image yet'/><br>
     Name: ".$fname."&nbsp".$lname."<br>
     Tel no: ".$tel."<br>
-    Email: ".$email."<br>
+    Email: ".$email."<br></br>
+    <div class='btn btn-primary btn-lg' data-target='#myModal' data-toggle='modal'>Message Owner</div>
     
 
 
@@ -91,6 +92,24 @@ while($row2=mysql_fetch_array($result2)){
 }?>
 			</div>
 		</div>
+         <div class="panel panel-default">
+              <div class="panel-heading">Amenities</div>
+              <div class="panel-body">
+                <ul>
+                    <li>TV</li>
+                    <li>Internet</li>
+                    <li>Air conditioning</li>
+                    <li>Washer</li>
+                    <li>Drier</li>
+                    <li>Swimming pool</li>
+                    <li>Towels</li>
+                    <li>Cable Tv</li>
+                    
+
+                </ul>
+                    
+                  </div>
+            </div>
 	   </div>
 	   <div class="col-md-8">
 	  
@@ -130,9 +149,9 @@ while($row=mysql_fetch_array($result)){
             <div class='row'>
             
             
-            <img src='../".$photo2."'  height='150' width='auto' />
-            <img src='../".$photo3."'  height='150' width='auto' />
-            <img src='../".$photo1."'  height='150' width='auto' />
+            <img src='".$photo2."'  height='150' width='33%' />
+            <img src='".$photo3."'  height='150' width='33%' />
+            <img src='".$photo1."'  height='150' width='33%' />
            
 
 
@@ -148,29 +167,63 @@ while($row=mysql_fetch_array($result)){
 ?> 
 				   <h2>Description</h2>
 				   <p><?php echo $description ?></p>
+                   <table>
+                    <tr>
+                   <td>Accomodates <i class="fa fa-users fa-fw"></i> 5 People &nbsp</td>
+                   <td></rd>
+                   <td>Beds 3 &nbsp</td>
+                   <td>Bathrooms 3 &nbsp</td>
+                   <td>Kitchen 1 &nbsp</td>
+                   <td>Rooms 5 &nbsp</td>
+                   </tr>
+                   </table>
 				   <hr class="intro-divider" />
 	        <?php echo "
             <p>Available from :".$av_date."</p>
             <p>Room type: ".$room_type."</p>
             <p>Location: ".$city."</p>
             <p>Availability:Yes</p>
-            <p>Pricing:sh 1000 per night</p>
-        <div class='btn btn-primary btn-lg' data-target='#myModal' data-toggle='modal'>Message Owner</div>"; ?>
+            <p>Pricing:".$per_night."".$currency."</p>
+        "; ?>
 				  </div>
 			</div>
-				<div class="panel panel-default">
+			<!--	<div class="panel panel-default">
 			  <div class="panel-heading">Other Listings by the User</div>
 			  <div class="panel-body">
 				    
 				  </div>
-			</div>
+			</div> -->
 
 
 	   </div>
 	</div>
+    <div class="panel panel-default">
+              <div class="panel-heading">Rules</div>
+             
+              <div class="panel-body">
+                     <ol>
+                <li>No pets</li>
+                <li>No smoking inside</li>
+                <li>No Parties</li>
+                <li>No Fighting</li>
+               
+              </ol>
+                  </div>
+            </div>
 
 
  </div>
+
+ <div class="row">
+    <h1 align="center">Reviews</div>
+    <hr class="intro-divider" />
+    <div class="col-md-4">
+       
+    </div>
+    <div class="col-md-8">
+            
+    </div>
+</div>
    
 
 <!-- message modal -->

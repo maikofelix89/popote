@@ -39,7 +39,19 @@
 </head>
 
 <body>
-    <?php include_once('../header/header.php'); ?>
+    <?php include_once('../header/header.php'); 
+
+     if (!isset($_SESSION['usrnm'])) {
+
+  header('location:../login/login.php');
+
+
+  }
+
+
+
+
+    ?>
 
     <div class="row" id="content">
     <div class="container">
@@ -97,7 +109,7 @@ echo "
     <div class='thumbnail'>
         <div class='caption'>
             <h3>".$home_type."</h3>
-            <img src='../".$photo2."' class='img-responsive' />
+            <img src='".$photo2."' class='img-responsive' />
             <hr class='intro-divider' />
             <p>Available from :".$av_date."</p>
             <p>Room type: ".$room_type."</p>

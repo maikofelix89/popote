@@ -1,38 +1,24 @@
 body{
 
-font-family: 'Crimson Text', serif;
+font-family: 'Lato', sans-serif;
 
 text-align: center; 
 
-}
-form{
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-h2{
-font-family: 'Crimson Text', serif;
-font-size: 80;
-text-align: center;	
-}
-
-p{
-font-family: 'Crimson Text', serif;
-font-size: 20px;
-text-align: center; 
 }
 
 #hiw{
 	background-color: #fcfcfc;
 }
 h3{
-	font-family: 'Crimson Text', serif;
-font-size: 100;
+font-family: 'Lato', sans-serif;
+
 text-align: center;	
 
 }
 h1{
 	color:#255F0B;
-  font-size:50px !important;
-  font-family: 'Stalemate', cursive;
+  
+  
 
 }
 
@@ -49,8 +35,30 @@ h1{
     height:100%;
   }
   .thumbnail{
-    height: 250px;
+    
   }
+
+  /* --------------------------------------
+   Searchbar
+   -------------------------------------- */
+
+   #searchrow .form-control{
+    padding: 5px 5px 5px 5px;
+    background-color: rgba(0,0,0,0.5);
+    color: #FFF;
+   }
+   #searchrow{
+     background-color: rgba(0,0,0,0.5);
+     padding: 5px 5px 5px 5px;
+   }
+
+
+
+/* --------------------------------------
+   End of searchbar
+   -------------------------------------- */
+
+
 
 
 /* --------------------------------------
@@ -79,7 +87,7 @@ h1{
 }
 
 #myCarousel .item { 
-	height:600px;
+	height:650px;
 	 }
 
 #slide1 {
@@ -163,6 +171,23 @@ h1{
   	transform:scale(1.5);
   }
 
+  #host{
+    background-color: transparent;
+    padding: 10px 10px 10px 10px;
+    border-style: solid;
+    border-color: #FFF;
+    -webkit-transition:0.5s;
+    -moz-trsnsition:0.5s;
+    -o-transition:0.5s;
+  }
+
+  #host:hover{
+    background-color: #255F0B;
+    -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -o-transform:scale(1.1);
+  }
+
 /* --------------------------------------
    navbar
    -------------------------------------- */
@@ -230,5 +255,18 @@ font-family: 'Crimson Text', serif;
    }
 
    #popular{
-    background-color: #fcfcfc;
+    background-color:rgba(0,0,0,0.9);
+    color:#FFF;
+   }
+   #popular h1{
+    color:#FFF;
+   }
+
+   #otherlistingthumb{
+    min-height: 330px;
+   }
+   #otherlistingthumb:hover{
+    border-style: solid;
+    border-width:5px;
+    border-color: #255F0B;
    }

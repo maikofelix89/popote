@@ -18,7 +18,7 @@
     <link href="../font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- goofle fonts -->
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
 
     <!-- jasny -->
@@ -35,7 +35,18 @@
 </head>
 
 <body>
-	<?php include('../header/header.php'); ?>
+	<?php include('../header/header.php'); 
+
+   if (!isset($_SESSION['usrnm'])) {
+
+  header('location:../login/login.php');
+
+
+  }
+
+
+
+  ?>
 
     <div class="row" id="content">
     <div class="container">
@@ -81,6 +92,7 @@
     $currency=$row['currency'];
     $per_night=$row['per_night'];
     $pricing_method=$row['pricing_method'];
+     $photo1=$row['photo1'];
     $photo2=$row['photo2'];
     $av_date=$row['av_date'];
 
@@ -91,12 +103,12 @@ echo "
     <div class='thumbnail'>
         <div class='caption'>
             <h3>".$home_type."</h3>
-            <img src='../".$photo2."' class='img-responsive' />
+            <img src='".$photo1."' class='img-responsive' />
             <hr class='intro-divider' />
             <p>Available from :".$av_date."</p>
             <p>Room type: ".$room_type."</p>
             <p>Location: ".$city."</p>
-            <p>Availability:Yes</p>
+            <!-- <p>Availability:Yes</p> -->
             <p>".$per_night."". $currency."".$pricing_method."</p>
         <a href='listing_details.php?id=".$id."' class='btn btn-primary btn-lg'>Details</a>
         </div>

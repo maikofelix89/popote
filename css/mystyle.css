@@ -1,9 +1,10 @@
 body{
-	background-image: url('../images/white.png')
+	background-image: url('../images/white.png');
+  font-family: 'Lato', sans-serif;
 }
 
 h1{
- font-family: 'Ubuntu';
+ 
   color:#255F0B;
   
 }
@@ -11,9 +12,7 @@ h1{
 #sidemenu{
 	margin-top: 100px;
 }
-body{
-	font-family: Ubuntu;
-}
+
 #mycontainer{
 margin-top: 50px;
 }
