@@ -25,8 +25,7 @@ session_start();
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     
-                    <li>
-                        <a href="../message/view_message.php"><i class="fa  fa-envelope fa-fw"><i class="badge">inbox
+                    
                         <?php 
                          if (isset($_SESSION['usrnm'])) {
                         require_once('../connection/connection.php');
@@ -38,28 +37,20 @@ session_start();
 $result=mysql_query($sql);
 $count=mysql_num_rows($result);
 
-                        echo $count."</i></i><span class='network-name'></span> </a>";
-                    }
-                    else{
+                        echo "<li>
+                        <a href='../message/view_message.php'><i class='fa  fa-envelope fa-fw'><i class='badge'>inbox ".$count."</i></i><span class='network-name'></span> </a>
 
-                    echo "</i></i><span class='network-name'></span> </a>";
-
-                }?>
-
-
-
-                    
-                    </li>
+                        </li>
                    
 
                     <li>
-                    <a href="" data-toggle="dropdown" class="dropdown-toggle">Listings<i class="fa  fa-book fa-fw"></i> <span class="network-name"></span> <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
+                    <a href='' data-toggle='dropdown' class='dropdown-toggle'>Listings<i class='fa  fa-book fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
+                                    <ul class='dropdown-menu'>
 
-                                        <li><a href="../listing/post_listing.php">Post Listing</a></li>
+                                        <li><a href='../listing/post_listing.php'>Post Listing</a></li>
 
-                                        <li><a href="../listing/mylistings.php">My Listing</a></li>
-                                        <li><a href="../listing/view_listings.php">All Listings</a></li>
+                                        <li><a href='../listing/mylistings.php'>My Listing</a></li>
+                                        <li><a href='../listing/view_listings.php'>All Listings</a></li>
 
                                         
 
@@ -68,12 +59,12 @@ $count=mysql_num_rows($result);
                                      </ul>
                     </li>
                     <li>
-                    <a href="" data-toggle="dropdown" class="dropdown-toggle">Account<i class="fa  fa-cogs fa-fw"></i> <span class="network-name"></span> <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
+                    <a href='' data-toggle='dropdown' class='dropdown-toggle'>Account<i class='fa  fa-cogs fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
+                                    <ul class='dropdown-menu'>
 
-                                        <li><a href="../profile/myprofile.php">Profile</a></li>
+                                        <li><a href='../profile/myprofile.php'>Profile</a></li>
 
-                                        <li><a href="mylistings.php">Settings</a></li>
+                                        <li><a href='mylistings.php'>Settings</a></li>
                                         
 
                                         
@@ -85,8 +76,24 @@ $count=mysql_num_rows($result);
                     
                     
                     <li >
+
+
+
+                        ";
+
+                    }
+                    else{
+
+                    echo "</i></i><span class='network-name'></span> </a></li>";
+
+                }?>
+
+
+
+                    
+                    
                     <?php  if (!isset($_SESSION['usrnm'])) {
-                            echo "<a href='../login/alt_login.php'>Log In<i class='fa  fa-power-off fa-fw'></i> <span class='network-name'></span> </a>";
+                            echo "<li><a href='../login/alt_login.php'>Log In<i class='fa  fa-power-off fa-fw'></i> <span class='network-name'></span> </a>";
      
 } else{
    echo "<a href='../profile/myprofile.php''>".$_SESSION['usrnm']."<i class='fa  fa-user fa-fw'></i> <span class='network-name'></span> </a>
@@ -95,7 +102,7 @@ $count=mysql_num_rows($result);
                     </li>";
 
 } ?>
-                    </li>
+                    
                     
                     
                     
