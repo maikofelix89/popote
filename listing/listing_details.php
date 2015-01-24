@@ -13,6 +13,8 @@
     <!-- popote css -->
     <link href="../css/mystyle.css" rel="stylesheet">
     <link href="../css/nav.css" rel="stylesheet">
+    
+   
 
     <!-- fonts -->
     <link href="../font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -137,9 +139,11 @@ while($row=mysql_fetch_array($result)){
     $photo1=$row['photo1'];
     $photo2=$row['photo2'];
     $photo3=$row['photo3'];
-    $av_date=$row['av_date'];
+    $checkin=$row['checkin'];
+    $checkout=$row['checkout'];
     $description=$row['description'];
     $user_id=$row['user_id'];
+    $no_guests=$row['no_guests'];
    $GLOBALS['user_id'] =$user_id; 
 
 
@@ -149,9 +153,9 @@ while($row=mysql_fetch_array($result)){
             <div class='row'>
             
             
-            <img src='".$photo2."'  height='150' width='33%' />
-            <img src='".$photo3."'  height='150' width='33%' />
-            <img src='".$photo1."'  height='150' width='33%' />
+            <img src='".$photo2."'  height='150' width='33%' alt=''/>
+            <img src='".$photo3."'  height='150' width='33%' alt='' />
+            <img src='".$photo1."'  height='150' width='33%' alt=''/>
            
 
 
@@ -169,7 +173,7 @@ while($row=mysql_fetch_array($result)){
 				   <p><?php echo $description ?></p>
                    <table>
                     <tr>
-                   <td>Accomodates <i class="fa fa-users fa-fw"></i> 5 People &nbsp</td>
+                   <td>Accomodates <i class="fa fa-users fa-fw"></i><?php echo $no_guests; ?> People &nbsp</td>
                    <td></rd>
                    <td>Beds 3 &nbsp</td>
                    <td>Bathrooms 3 &nbsp</td>
@@ -179,7 +183,8 @@ while($row=mysql_fetch_array($result)){
                    </table>
 				   <hr class="intro-divider" />
 	        <?php echo "
-            <p>Available from :".$av_date."</p>
+            <p>Available from :".$checkin."</p>
+            <p>Available from :".$checkout."</p>
             <p>Room type: ".$room_type."</p>
             <p>Location: ".$city."</p>
             <p>Availability:Yes</p>
@@ -215,15 +220,119 @@ while($row=mysql_fetch_array($result)){
  </div>
 
  <div class="row">
+
     <h1 align="center">Reviews</div>
     <hr class="intro-divider" />
-    <div class="col-md-4">
+  <div class="container">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+   
+      <?php
+      require_once('../connection/connection.php');
+
+      $id=$_GET['id'];
+     
+
+      
+
+      $sql4="SELECT * FROM `reviews` WHERE listing_id='$id' LIMIT 0 , 30";
+      $result4=mysql_query($sql4) or die(mysql_error());
+
+      while($row4=mysql_fetch_array($result4)){
+         $from=$row4['user_id'];
+         $review=$row4['review'];
+         $date=$row4['date'];
+         $GLOBALS['from']=$row4['user_id'];
+                        
+                        echo "
+                      <div class='media'>";
+                       
+                        
+                          
+
+                            $sql2="SELECT * FROM `perm_user` WHERE perm_id='$from'";
+                            $result2=mysql_query($sql2);
+                            while($row2=mysql_fetch_array($result2)){
+                            $GLOBALS['fname']=$row2['fname'];
+                            $pic=$row2['pic'];
+                      
+                       
+                       
+
+    }
+     
+  echo"
+   <div class='media-body'>
+   <div class='col-md-2'>
+   <img src='".$pic."' class='img-rounded' height='100' />
+   <hr class='intro-divider'>
+   ".$fname."
+   </div>
+   <div class='col-md-10'>".$review."
+
+   </div>
+   </div>
+    </div>
+    <hr class='intro-divider' />
+
+   ";
+   
+
+
+   
+
+
+   
+
+}
+
+    
+   
+         
+
+     
+    
+      ?>
+     
+  
+
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+        <form role="form" id="myform" class="form-horizontal" action="post_review.php" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+                <label class="col-md-4 control-label" for="input-detail-label">Accomodation Review:</label>
+                <div class="row col-xs-8">
+                  <textarea class="form-control input-sm" rows="10" col="5"  name="review" placeholder="Give your review"></textarea>
+                </div>
+          </div>
+          <div class="form-group" style="display:none">
+             <?php echo  "<input type='text' class='form-control' id='inputEmail' name='from' value='".$_SESSION['id']."' />"; ?>
+              <?php echo  "<input type='text' class='form-control' id='inputEmail' name='id' value='".$id."' />"; ?>
+           
+        </div>
+          <div class="form-group">
+                          <label class="col-md-4 control-label" for="sumit"></label>
+                          <button type="submit"  class="btn btn-danger custom-btn-submit" id="submit-btn">Submit</button>                
+                                           
+          </div>
+
+        </form>
+    </div>
+    </div>
        
     </div>
-    <div class="col-md-8">
+    <div class="col-md-12">
             
     </div>
 </div>
+</div>
+</div>
+
+
    
 
 <!-- message modal -->
@@ -322,7 +431,7 @@ while($row=mysql_fetch_array($result)){
 
     </div>
 
-
+<?php include_once('../footer/footer.php'); ?>
 
 
 

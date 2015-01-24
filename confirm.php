@@ -33,7 +33,7 @@ header("location:index.php");
 }
 else {
 
-	header("location:signup/signup.php");
+	header("location:../login/alt_login.php");
 
 }
 

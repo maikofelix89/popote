@@ -94,7 +94,8 @@
     $pricing_method=$row['pricing_method'];
      $photo1=$row['photo1'];
     $photo2=$row['photo2'];
-    $av_date=$row['av_date'];
+    $checkin=$row['checkin'];
+    $checkout=$row['checkout'];
 
   
   
@@ -105,7 +106,8 @@ echo "
             <h3>".$home_type."</h3>
             <img src='".$photo1."' class='img-responsive' />
             <hr class='intro-divider' />
-            <p>Available from :".$av_date."</p>
+            <p>Available from :".$checkin."</p>
+            <p>Available To :".$checkout."</p>
             <p>Room type: ".$room_type."</p>
             <p>Location: ".$city."</p>
             <!-- <p>Availability:Yes</p> -->

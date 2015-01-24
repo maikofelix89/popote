@@ -23,7 +23,7 @@ $result=mysql_query($sql);
 
 //$msg ='http://www.felixmaiko.com/popote/confirm.php?conf='.$conf_link;
 
-$msg ='../confirm.php?conf='.$conf_link;
+$msg ='Click the link to activate your account '.'../confirm.php?conf='.$conf_link;
 echo $msg;
 
 header('location:'.$msg);

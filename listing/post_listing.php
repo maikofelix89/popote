@@ -10,6 +10,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap.css" rel="stylesheet">
     
+    
     <!-- popote css -->
     <link href="../css/mystyle.css" rel="stylesheet">
     <link href="../css/nav.css" rel="stylesheet">
@@ -120,7 +121,18 @@
                             </div>
                                                 
                             </div>
-                    </div>
+                   
+                    <div class="form-group">
+                           <label class="col-md-4 control-label" for="r_password">Available until</label>
+                        <div class="col-md-6">
+                            <input id="demo2" name="date2"  class="form-control" type='text' data-provide="datepicker" size='25'>
+                            
+                           </input>
+
+                            </div>
+                                                
+                            </div>
+                   
                      <div class="form-group">
                             <label class="col-md-4 control-label" for="password">Pricing method</label>
                         <div class="col-md-6">
@@ -251,6 +263,11 @@
 
     <script type="text/javascript">
       $('#demo1').datepicker({
+   
+    startDate: '-d'
+})
+
+$('#demo2').datepicker({
    
     startDate: '-d'
 })

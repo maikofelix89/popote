@@ -65,20 +65,20 @@
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <h3>List your property and host international friends</h3>
-             <a href="signup.html"class="btn btn-danger" id="host">Become a Host</a>
+             <a href="listing/post_listing.php"class="btn btn-danger" id="host">Become a Host</a>
              <hr class="intro-divider" />
 
               <div class="row" id="searchrow">
         <div class="col-md-12">
           
 
-    <form class="form-inline" action="search/search.php" method="POST" enctype="multipart/form-data">
+    <form class="form-inline" action="search.php" method="POST" enctype="multipart/form-data">
 
         <div class="form-group">
 
             
 
-            <input type="text" class="form-control" id="location" placeholder="Location">
+            <input type="text" class="form-control" id="location" name="location" placeholder="Location">
 
         </div>
 
@@ -86,21 +86,21 @@
 
            
 
-            <input type="text" class="form-control" id="checkin" data-provide="datepicker" placeholder="Check in date">
+            <input type="text" class="form-control" id="checkin"name="checkin" data-provide="datepicker" placeholder="Check in date">
 
         </div>
         <div class="form-group">
 
            
 
-            <input type="text" class="form-control" id="checkout" data-provide="datepicker" placeholder="Check out date">
+            <input type="text" class="form-control" id="checkout" name="checkout" data-provide="datepicker" placeholder="Check out date">
 
         </div>
         <div class="form-group">
 
            
 
-            <input type="text" class="form-control" id="no_of_guests" placeholder="Guests">
+            <input type="text" class="form-control" id="no_of_guests" name="no_of_guests" placeholder="Guests">
 
         </div>
        
@@ -125,20 +125,20 @@
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <h3>Search and find a home away from home</h3>
-              <a href="signup.html"class="btn btn-danger" id="host">Become a Host</a>
+              <a href="listing/post_listing.php"class="btn btn-danger" id="host">Become a Host</a>
               <hr class="intro-divider"  />
               
                         <div class="row" id="searchrow">
         <div class="col-md-12">
           
 
-    <form class="form-inline" action="search/search.php" method="POST" enctype="multipart/form-data">
+    <form class="form-inline" action="search.php" method="POST" enctype="multipart/form-data">
 
         <div class="form-group">
 
             
 
-            <input type="text" class="form-control" id="location" placeholder="Location">
+            <input type="text" class="form-control" id="location" name="location" placeholder="Location">
 
         </div>
 
@@ -146,21 +146,21 @@
 
            
 
-            <input type="text" class="form-control" id="checkin" data-provide="datepicker" placeholder="Check in date">
+            <input type="text" class="form-control" id="checkin" name="checkin" data-provide="datepicker" placeholder="Check in date">
 
         </div>
         <div class="form-group">
 
            
 
-            <input type="text" class="form-control" id="checkout" data-provide="datepicker" placeholder="Check out date">
+            <input type="text" class="form-control" id="checkout" name="checkout" data-provide="datepicker" placeholder="Check out date">
 
         </div>
         <div class="form-group">
 
            
 
-            <input type="text" class="form-control" id="no_of_guests" placeholder="Guests">
+            <input type="text" class="form-control" id="no_of_guests" name="no_of_guests" placeholder="Guests">
 
         </div>
        
@@ -185,7 +185,7 @@
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <h3>Create memories</h3>
-               <a href="signup.html"class="btn btn-danger" id="host">Become a Host</a>
+               <a href="listing/post_listing.php"class="btn btn-danger" id="host">Become a Host</a>
               <hr class="intro-divider"  />
              
 
@@ -193,13 +193,13 @@
         <div class="col-md-12">
           
 
-    <form class="form-inline" action="search/search.php" method="POST" enctype="multipart/form-data">
+    <form class="form-inline" action="search.php" method="POST" enctype="multipart/form-data">
 
         <div class="form-group">
 
             
 
-            <input type="text" class="form-control" id="location" placeholder="Location">
+            <input type="text" class="form-control" id="location" name="location" placeholder="Location">
 
         </div>
 
@@ -207,21 +207,21 @@
 
            
 
-            <input type="text" class="form-control" id="checkin" data-provide="datepicker" placeholder="Check in date">
+            <input type="text" class="form-control" id="checkin" name="checkin" data-provide="datepicker" placeholder="Check in date">
 
         </div>
         <div class="form-group">
 
            
 
-            <input type="text" class="form-control" id="checkout" data-provide="datepicker" placeholder="Check out date">
+            <input type="text" class="form-control" id="checkout" name="checkout" data-provide="datepicker" placeholder="Check out date">
 
         </div>
         <div class="form-group">
 
            
 
-            <input type="text" class="form-control" id="no_of_guests" placeholder="Guests">
+            <input type="text" class="form-control" id="no_of_guests" name="no_of_guests" placeholder="Guests">
 
         </div>
        
@@ -331,7 +331,9 @@
     $pricing_method=$row['pricing_method'];
     $photo1=$row['photo1'];
     $photo2=$row['photo2'];
-    $av_date=$row['av_date'];
+    $checkin=$row['checkin'];
+    $checkout=$row['checkout'];
+     $no_guests=$row['no_guests'];
 
     $mainphoto=substr($photo1,3);
 
@@ -346,8 +348,9 @@ echo "
            
             <a href='listing/listing_details.php?id=".$id."'><img src='".$mainphoto."' class='img-responsive' /></a>
             <div class='caption'>
-            <p>".$city."</p>
-            <p>".$per_night."".$currency."".$pricing_method."</p>
+            <p>Location: ".$city."</p>
+            <p>Price: ".$per_night."".$currency." ".$pricing_method."</p>
+
            </div>
             </div>
 
@@ -394,7 +397,7 @@ echo "
 
                            <p><a href="terms/terms.php">Terms and conditions</a></p>   
                             
-                        <p>Copyright &copy;Popote Listings 2014<p>
+                        <p>Copyright &copy;Popote Listings 2015<p>
                     </div>
                 </div>
             </div>

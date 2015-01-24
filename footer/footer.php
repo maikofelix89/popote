@@ -1,3 +1,12 @@
+<style type="text/css">
+   .footer-below{
+  padding-top: 20px;
+  background-color: #444E5A;
+  color: #FFF;
+}
+</style>
+
+
 
       <!-- start of footer section -->
 
@@ -31,7 +40,7 @@
 
                            <p><a href="terms/terms.php">Terms and conditions</a></p>   
                             
-                        <p>Copyright &copy;Popote Listings 2014<p>
+                        <p>Copyright &copy;Popote Listings 2015<p>
                     </div>
                 </div>
             </div>
