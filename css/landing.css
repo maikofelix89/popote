@@ -31,8 +31,7 @@ h1{
    -------------------------------------- */
 
   .thumbnail img{
-    width:100%;
-    height:100%;
+    
   }
   .thumbnail{
     
@@ -44,7 +43,7 @@ h1{
 
    #searchrow .form-control{
     padding: 5px 5px 5px 5px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
     color: #FFF;
    }
    #searchrow{
@@ -91,12 +90,12 @@ h1{
 	 }
 
 #slide1 {
-	background: url('../images/21.jpg') top center no-repeat;
+	background: url('../images/20.jpg') top center no-repeat;
 	background-size: cover;
 }
 
 #slide2 {
-	background: url('../images/20.jpg') top center no-repeat;
+	background: url('../images/21.jpg') top center no-repeat;
 	background-size: cover;
 }
 
@@ -148,7 +147,7 @@ h1{
   .btn-primary{
   	display: inline-block;
   	background-color: #FFF;
-  	color: #255F0B;
+  	color: #5cb85c;
   	padding: 5px 5px 5px 5px;
   	-webkit-transition :1s;
 
@@ -172,7 +171,7 @@ h1{
   }
 
   #host{
-    background-color: transparent;
+    background-color:#5cb85c;
     padding: 10px 10px 10px 10px;
     border-style: solid;
     border-color: #FFF;
@@ -198,7 +197,7 @@ h1{
   background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.95);
   border-color:transparent;
   border-style: solid;
-  border-color:#255F0B;
+  border-color:#5cb85c;
 
 
  }
@@ -208,7 +207,7 @@ h1{
  }
 
  .navbar-inverse .navbar-nav > li > a {
-color:#255F0B;
+color:#5cb85c;
 font-size: 72;
 font-weight: 500px;
 font-family: 'Crimson Text', serif;
@@ -216,18 +215,18 @@ font-family: 'Crimson Text', serif;
 
 }
 .navbar-inverse .navbar-nav > li > a:hover {
-background-color:#255F0B;
+background-color:#5cb85c;
 color:#FFF;
 font-size: 72;
 font-weight: 500px;
-font-family: 'Crimson Text', serif;
+
 -webkit-transform:scale(1.1);
 
 }
 
 
 .navbar-inverse .navbar-nav > .active>a {
-  background-color: #255F0B;
+  background-color:#5cb85c;
 }
 
 .intro-divider{
@@ -251,8 +250,7 @@ font-family: 'Crimson Text', serif;
   
 
    #popular img{
-    width:100%;
-    height:70%;
+   
    }
 
    #popular{
@@ -264,7 +262,7 @@ font-family: 'Crimson Text', serif;
    }
 
    #otherlistingthumb{
-    min-height: 330px;
+    max-height:420px;
     text-align: left;
 
    }
@@ -273,3 +271,13 @@ font-family: 'Crimson Text', serif;
     border-width:2px;
     border-color: #255F0B;
    }
+
+#hiw{
+  padding-top: 5%;
+ 
+  background-color: #FFF;
+}
+#popular{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}

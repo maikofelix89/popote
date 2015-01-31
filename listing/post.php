@@ -35,7 +35,7 @@ move_uploaded_file($_FILES['photo3']['tmp_name'], $target_path3);
 
 
 
-$sql="INSERT INTO `popote`.`listings` (`id`, `user_id`, `home_type`, `room_type`, `no_guests`, `city`, `checkin`,`checkout`, `pricing_method`, `currency`, `per_night`, `photo1`, `photo2`, `photo3`, `description`) 
+$sql="INSERT INTO `listings` (`id`, `user_id`, `home_type`, `room_type`, `no_guests`, `city`, `checkin`,`checkout`, `pricing_method`, `currency`, `per_night`, `photo1`, `photo2`, `photo3`, `description`) 
 VALUES (NULL, '$id','$hometype', '$roomtype', '$no_of_guests', '$city', '$date','$date2', '$pricing', '$currency', '$per_night', '$target_path1', '$target_path2', '$target_path3', '$acc_details')";
 $result=mysql_query($sql) or mysql_error();
 

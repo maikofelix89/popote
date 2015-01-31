@@ -99,8 +99,9 @@
     $currency=$row['currency'];
     $per_night=$row['per_night'];
     $pricing_method=$row['pricing_method'];
-    $photo2=$row['photo2'];
-    $av_date=$row['av_date'];
+    $photo1=$row['photo1'];
+    $checkin=$row['checkin'];
+    $checkout=$row['checkout'];
 
   
   
@@ -109,12 +110,13 @@ echo "
     <div class='thumbnail'>
         <div class='caption'>
             <h3>".$home_type."</h3>
-            <img src='".$photo2."' class='img-responsive' />
+            <img src='".$photo1."' class='img-responsive' />
             <hr class='intro-divider' />
-            <p>Available from :".$av_date."</p>
+            <p>Available from :".$checkin."</p>
+            <p>Available To :".$checkout."</p>
             <p>Room type: ".$room_type."</p>
             <p>Location: ".$city."</p>
-            <p>Availability:Yes</p>
+            <!-- <p>Availability:Yes</p> -->
             <p>".$per_night."". $currency."".$pricing_method."</p>
         <a href='listing_details.php?id=".$id."' class='btn btn-primary btn-lg'>Details</a>
         </div>

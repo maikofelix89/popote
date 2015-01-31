@@ -1,12 +1,17 @@
 body{
 	background-image: url('../images/white.png');
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu';
 }
 
 h1{
  
   color:#255F0B;
+  text-align: center;
   
+}
+
+h2{
+  color:#5cb85c;
 }
 
 #sidemenu{
@@ -25,7 +30,7 @@ margin-top: 100px;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
-	background-color:#255F0B;
+	background-color:#5cb85c;
 }
 
 /* --------------------------------------
@@ -41,7 +46,7 @@ margin-top: 100px;
 color:#255F0B;
 font-size: 72;
 font-weight: 500px;
-font-family: 'Crimson Text', serif;
+
 -webkit-transition:0.5s;
 
 }
@@ -50,7 +55,7 @@ background-color:#255F0B;
 color:#FFF;
 font-size: 72;
 font-weight: 500px;
-font-family: 'Crimson Text', serif;
+
 -webkit-transform:scale(1.1);
 
 }
@@ -76,7 +81,7 @@ font-family: 'Crimson Text', serif;
   buttons
    -------------------------------------- */
 
-   .btn{
+   .btn-primary{
    	display:inline-block;
    	background-color: transparent;
     padding: 10px 10px 10px 10px;
@@ -86,7 +91,7 @@ font-family: 'Crimson Text', serif;
      -o-transition:0.05s;
      -moz-transition:0.05s;
    }
-   .btn:hover{
+   .btn-primary:hover{
     -webkit-transform:scale(1.1);
     -moz-transform:scale(1.1);
     -o-transform:scale(1.1);
@@ -109,4 +114,22 @@ font-family: 'Crimson Text', serif;
 
 #content{
 	margin-top: 80px;
+}
+
+/* listing carousel  */
+
+#listing_carousel .item{
+  height:500px;
+  width:100%;
+}
+
+#listing_carousel img{
+
+  height: 100%;
+  width: 100%;
+
+}
+
+#rules{
+  text-align: center;
 }

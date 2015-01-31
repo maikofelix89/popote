@@ -65,7 +65,7 @@
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <h3>List your property and host international friends</h3>
-             <a href="listing/post_listing.php"class="btn btn-danger" id="host">Become a Host</a>
+             <a href="login/alt_login.php"class="btn btn-danger" id="host">Become a Host</a>
              <hr class="intro-divider" />
 
               <div class="row" id="searchrow">
@@ -125,7 +125,7 @@
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <h3>Search and find a home away from home</h3>
-              <a href="listing/post_listing.php"class="btn btn-danger" id="host">Become a Host</a>
+              <a href="login/alt_login.php"class="btn btn-danger" id="host">Become a Host</a>
               <hr class="intro-divider"  />
               
                         <div class="row" id="searchrow">
@@ -185,7 +185,7 @@
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <h3>Create memories</h3>
-               <a href="listing/post_listing.php"class="btn btn-danger" id="host">Become a Host</a>
+               <a href="login/alt_login.php"class="btn btn-danger" id="host">Become a Host</a>
               <hr class="intro-divider"  />
              
 
@@ -244,7 +244,7 @@
       
       </div><!-- end myCarousel -->
 
-  <div class="row">
+  <div class="row" id="hiw">
     <h1 align="center">How  it works</div>
        <hr class="intro-divider" />
     <div class="container">
@@ -315,7 +315,7 @@
   $start = $MAX_REC_PER_PAGE * ($page - 1);
   $max = $MAX_REC_PER_PAGE;
   $rs = mysql_query("SELECT * FROM listings ORDER BY id 
-   ASC LIMIT $start, $max") or die("query error!");
+   DESC LIMIT $start, $max") or die("query error!");
  
 
  
@@ -333,9 +333,22 @@
     $photo2=$row['photo2'];
     $checkin=$row['checkin'];
     $checkout=$row['checkout'];
-     $no_guests=$row['no_guests'];
+    $no_guests=$row['no_guests'];
+     $user_id=$row['user_id'];
 
     $mainphoto=substr($photo1,3);
+
+    $sql2="SELECT * FROM perm_user WHERE perm_id='$user_id'";
+    $result2=mysql_query($sql2);
+
+    while($row2=mysql_fetch_array($result2)){
+
+             $ownerid=$row2['perm_id'];
+             $fname=$row2['fname'];
+             $lname=$row2['lname'];
+            
+            $ownerpic=substr($row2['pic'],3);
+
 
   
   
@@ -346,10 +359,14 @@ echo "
            <div class='thumbnail' id='otherlistingthumb'>
            
            
-            <a href='listing/listing_details.php?id=".$id."'><img src='".$mainphoto."' class='img-responsive' /></a>
+            <a href='listing/listing_details.php?id=".$id."'><img src='".$mainphoto."' class='img-rounded' style='width:100%;height:200px;' /></a>
             <div class='caption'>
             <p>Location: ".$city."</p>
             <p>Price: ".$per_night."".$currency." ".$pricing_method."</p>
+            <hr class='intro-divider' />
+            <img src='".$ownerpic."' class='img-circle' height='50' width='50'/>
+            <p>Listing by ".$fname."</p>
+           
 
            </div>
             </div>
@@ -359,6 +376,7 @@ echo "
   
 
 </div>";
+}
 
 }
 ?>

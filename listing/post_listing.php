@@ -31,11 +31,11 @@
 </head>
 
 <body>
-	<?php include('../header/header.php'); 
+	<?php include("../header/header.php"); 
 
   if (!isset($_SESSION['usrnm'])) {
 
-  header('location:../login/login.php');
+  header('location:../login/alt_login.php');
 
 
   } ?>

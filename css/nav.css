@@ -7,13 +7,13 @@
  	
  	border-color:transparent;
  	border-style: solid;
- 	border-color:#255F0B;
+ 	border-color:#5cb85c;
 
 
  }
 
  .navbar-inverse .navbar-nav > li > a {
-color:#255F0B;
+color:#5cb85c;
 
 font-weight: 400px;
 font-family: 'Ubuntu';

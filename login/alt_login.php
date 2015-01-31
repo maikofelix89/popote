@@ -28,6 +28,10 @@
         max-height: 200px;
         width:50%;
     }
+
+    h1{
+      color: #5CB85C;
+    }
     </style>
 
   </head>

@@ -41,7 +41,7 @@
         <div class="col-md-4">
         <div class="thumbnail" id="host">
             <div class="caption">
-                <h2>Host Details</h2>
+                <h2 align="center">Host Details</h2>
                 <hr class="intro-divider" />
 
 <?php if (isset($_SESSION['usrnm'])) {
@@ -95,28 +95,46 @@ while($row2=mysql_fetch_array($result2)){
 			</div>
 		</div>
          <div class="panel panel-default">
-              <div class="panel-heading">Amenities</div>
+              <h2 align="center">Amenities</h2>
+              <hr class="intro-divider" />
               <div class="panel-body">
-                <ul>
-                    <li>TV</li>
-                    <li>Internet</li>
-                    <li>Air conditioning</li>
-                    <li>Washer</li>
-                    <li>Drier</li>
-                    <li>Swimming pool</li>
-                    <li>Towels</li>
-                    <li>Cable Tv</li>
-                    
+               <?php
+               require_once('../connection/connection.php');
+               $id=$_GET['id'];
 
-                </ul>
+               $sql5="SELECT * FROM `listing_amenities` WHERE listing_id='$id'";
+
+               $result5=mysql_query($sql5);
+                $count=mysql_num_rows($result5);
+
+                if($count==0){
+                  echo "<a href='amenities.php?id=".$id."' class='btn btn-primary'>Add Amenities</a>";
+                }
+
+                else{
+                  while($row5=mysql_fetch_array($result5)){
+                    $amenities=$row5['amenities'];
+
+
+                    echo $amenities;
+
+                }
+              }
+
+
+           
+
+               ?>
                     
                   </div>
             </div>
+
 	   </div>
 	   <div class="col-md-8">
 	  
 		   	<div class="panel panel-default">
-			  <div class="panel-heading">Listing Details</div>
+			  <h2 align="center">Listing Details</h2>
+        <hr class="intro-divider" />
 			  <div class="panel-body">
 <?php
 require_once('../connection/connection.php');
@@ -149,13 +167,54 @@ while($row=mysql_fetch_array($result)){
 
     
     
-    echo" <h3>".$home_type."</h3>
+    echo" 
             <div class='row'>
+            <div id='listing_carousel' class='carousel slide' >
+  <!-- Indicators -->
+  <ol class='carousel-indicators'>
+    <li data-target='#listing_carousel' data-slide-to='0' class='active'></li>
+    <li data-target='#listing_carousel' data-slide-to='1'></li>
+    <li data-target='#listing_carousel' data-slide-to='2'></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class='carousel-inner' role='listbox'>
+    <div class='item active'>
+       <img src='".$photo1."'alt=''/>
+      <div class='carousel-caption'>
+       
+      </div>
+    </div>
+    <div class='item'>
+      <img src='".$photo2."'alt='' />
+      <div class='carousel-caption'>
+       
+      </div>
+    </div>
+    <div class='item'>
+      <img src='".$photo3."' alt='' />
+      <div class='carousel-caption'>
+        
+      </div>
+    </div>
+   
+  </div>
+
+  <!-- Controls -->
+  <a class='left carousel-control' href='#listing_carousel' role='button' data-slide='prev'>
+    <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+    <span class='sr-only'>Previous</span>
+  </a>
+  <a class='right carousel-control' href='#listing_carousel' role='button' data-slide='next'>
+    <span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
+    <span class='sr-only'>Next</span>
+  </a>
+</div>
             
             
-            <img src='".$photo2."'  height='150' width='33%' alt=''/>
-            <img src='".$photo3."'  height='150' width='33%' alt='' />
-            <img src='".$photo1."'  height='150' width='33%' alt=''/>
+           
+            
+           
            
 
 
@@ -169,50 +228,143 @@ while($row=mysql_fetch_array($result)){
 
 
 ?> 
-				   <h2>Description</h2>
-				   <p><?php echo $description ?></p>
+
+				   <h2 align="center">Description</h2>
+           <hr class="intro-divider" />
+				   <p><blockquote><i><?php echo $description ?></i></blockquote></p>
                    <table>
                     <tr>
-                   <td>Accomodates <i class="fa fa-users fa-fw"></i><?php echo $no_guests; ?> People &nbsp</td>
+                    <td><p><b>Home type :</b><?php echo $home_type ?></p></td>
+                  </tr>
+                  <tr>
+                   <td><p><b>Accomodates</b> <i class="fa fa-users fa-fw"></i><?php echo $no_guests; ?> People</p> &nbsp </td>
                    <td></rd>
-                   <td>Beds 3 &nbsp</td>
-                   <td>Bathrooms 3 &nbsp</td>
-                   <td>Kitchen 1 &nbsp</td>
-                   <td>Rooms 5 &nbsp</td>
+                  
                    </tr>
                    </table>
 				   <hr class="intro-divider" />
 	        <?php echo "
-            <p>Available from :".$checkin."</p>
-            <p>Available from :".$checkout."</p>
-            <p>Room type: ".$room_type."</p>
-            <p>Location: ".$city."</p>
-            <p>Availability:Yes</p>
-            <p>Pricing:".$per_night."".$currency."</p>
+            <p><b>Available from :</b>".$checkin."</p>
+            <p><b>Available from :</b>".$checkout."</p>
+            <p><b>Room type: </b>".$room_type."</p>
+            <p><b>Location: </b>".$city."</p>
+            
+            <p><b>Price:</b>" .$per_night."".$currency."</p>
         "; ?>
 				  </div>
 			</div>
-			<!--	<div class="panel panel-default">
-			  <div class="panel-heading">Other Listings by the User</div>
+
+  <div class="panel-default">
+    <div class="panel panel-body">
+
+  <h2 align="center">Rate my Place</h2>
+  <hr class="intro-divider" />
+  <form action="rate.php" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <p>On a scale of 1-10,1-Terible 10-Superp</p>
+      <select name="rating">
+       <?php 
+
+      
+
+      
+       for ($i = 1; $i <= 10; $i++) {
+        echo "<option>".$i."</option>";
+       }
+       ?>
+      </select>
+
+
+    </div>
+    <?php
+     $listing_id=$_GET['id'];
+       $user_id=$_SESSION['id'];
+
+       echo "<div class='form-group' style='display:none'>
+              <input type='text' class='form-control'  name='user_id' value='".$user_id."' />
+              <input type='text' class='form-control'  name='listing_id' value='".$listing_id."' />
+           
+        </div>";
+    ?>
+    <div class="form-group">
+      <button type="submit" class="btn btn-danger btn-lg">Rate</button>
+    </div>
+  </form>
+</div>
+  
+</div>
+			<div class="panel panel-default">
+			 
 			  <div class="panel-body">
+          <h2 align="center">Current Rating</h2>
+  <?php
+
+require_once('../connection/connection.php');
+$id=$_GET['id'];
+
+$sql="SELECT * FROM `rating` WHERE listing_id='$id'";
+$result=mysql_query($sql);
+$count_rate=mysql_num_rows($result);
+ $total=0;
+
+if($count_rate==0){
+  echo "<p>No rating yet</p>";
+}
+else{
+  while ($row=mysql_fetch_array($result)) {
+
+
+
+   $rating=$row['rating'];
+   $total=$total+$rating;
+
+  }
+  $average=$total/$count_rate;
+  echo "<h3 align='center'>".$average ."/10</h3><br>
+  <h4 align='center'>No of Votes :".$count_rate."
+
+  ";
+}
+
+  ?>
 				    
 				  </div>
-			</div> -->
-
+			</div>
+      
 
 	   </div>
 	</div>
-    <div class="panel panel-default">
-              <div class="panel-heading">Rules</div>
+    <div class="panel panel-default" id="rules">
+              <h2 align="center">Rules</h2>
+              <hr class="intro-divider" />
              
               <div class="panel-body">
-                     <ol>
-                <li>No pets</li>
-                <li>No smoking inside</li>
-                <li>No Parties</li>
-                <li>No Fighting</li>
-               
-              </ol>
+                      <?php
+               require_once('../connection/connection.php');
+               $id=$_GET['id'];
+
+               $sql5="SELECT * FROM `listing_amenities` WHERE listing_id='$id'";
+
+               $result5=mysql_query($sql5);
+                $count=mysql_num_rows($result5);
+
+                if($count==0){
+                  echo "<a href='amenities.php?id=".$id."' class='btn btn-primary'>Add Rules</a>";
+                }
+
+                else{
+                  while($row5=mysql_fetch_array($result5)){
+                    $rules=$row5['rules'];
+
+                    echo $rules;
+
+                }
+              }
+
+
+           
+
+               ?>
                   </div>
             </div>
 
@@ -221,7 +373,7 @@ while($row=mysql_fetch_array($result)){
 
  <div class="row">
 
-    <h1 align="center">Reviews</div>
+    <h2 align="center">Reviews</h2>
     <hr class="intro-divider" />
   <div class="container">
     <div class="col-md-12">
@@ -258,12 +410,7 @@ while($row=mysql_fetch_array($result)){
                             $GLOBALS['fname']=$row2['fname'];
                             $pic=$row2['pic'];
                       
-                       
-                       
-
-    }
-     
-  echo"
+                       echo"
    <div class='media-body'>
    <div class='col-md-2'>
    <img src='".$pic."' class='img-rounded' height='100' />
@@ -278,6 +425,12 @@ while($row=mysql_fetch_array($result)){
     <hr class='intro-divider' />
 
    ";
+                       
+                       
+
+    }
+     
+ 
    
 
 
@@ -314,9 +467,19 @@ while($row=mysql_fetch_array($result)){
               <?php echo  "<input type='text' class='form-control' id='inputEmail' name='id' value='".$id."' />"; ?>
            
         </div>
-          <div class="form-group">
-                          <label class="col-md-4 control-label" for="sumit"></label>
-                          <button type="submit"  class="btn btn-danger custom-btn-submit" id="submit-btn">Submit</button>                
+        <div class="form-group">
+        <?php if(!isset($_SESSION['id'])){
+           echo "<h4 align='center'>You need to login to submit a review</h4>";
+
+          
+                          }
+                          else {
+                            echo "
+          
+                          <label class='col-md-4 control-label' for='sumit'></label>
+                          <button type='submit'  class='btn btn-danger custom-btn-submit' id='submit-btn'>Submit</button>";
+                           
+                            } ?>              
                                            
           </div>
 
