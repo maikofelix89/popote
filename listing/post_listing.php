@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (!isset($_SESSION['usrnm'])) {
+
+  header('location:../login/alt_login.php');
+
+
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,14 +42,9 @@
 </head>
 
 <body>
-	<?php include("../header/header.php"); 
+	<?php include("../header/header2.php"); 
 
-  if (!isset($_SESSION['usrnm'])) {
-
-  header('location:../login/alt_login.php');
-
-
-  } ?>
+   ?>
 
 
     <div class="row">

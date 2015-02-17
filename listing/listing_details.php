@@ -277,18 +277,27 @@ while($row=mysql_fetch_array($result)){
 
     </div>
     <?php
-     $listing_id=$_GET['id'];
-       $user_id=$_SESSION['id'];
+     
+
+     if(isset($_SESSION['id'])){
+      $listing_id=$_GET['id'];
+     $user_id=$_SESSION['id'];
 
        echo "<div class='form-group' style='display:none'>
               <input type='text' class='form-control'  name='user_id' value='".$user_id."' />
               <input type='text' class='form-control'  name='listing_id' value='".$listing_id."' />
            
-        </div>";
+        </div>
+
+         <div class='form-group'>
+      <button type='submit' class='btn btn-danger btn-lg'>Rate</button>
+    </div>";
+      }
+      else{
+          echo "You need to log in to rate!";
+      }
     ?>
-    <div class="form-group">
-      <button type="submit" class="btn btn-danger btn-lg">Rate</button>
-    </div>
+   
   </form>
 </div>
   
@@ -334,6 +343,78 @@ else{
 
 	   </div>
 	</div>
+  <div class="panel panel-default" id="rules">
+     <h2 align="center">Location</h2>
+     <hr class="intro-divider" />
+     <?php 
+
+      $user_id=$_SESSION['id'];
+      $listing_id=$_GET['id'];
+      include_once('../connection/connection.php');
+
+       $sql2="SELECT * FROM listing_map WHERE listing_id='$id'";
+       $result2=mysql_query($sql2);
+       $count2=mysql_num_rows($result2);
+
+      
+
+       
+
+       if($count2==0){
+
+         $sql="SELECT * FROM listings WHERE id='$listing_id'";
+         $result=mysql_query($sql) or die(mysql_error());
+         $count=mysql_num_rows($result);
+
+              while($row=mysql_fetch_array($result)){
+              $user_id=$row['user_id'];
+
+              if($user_id==$_SESSION['id']){
+                  echo "<form method='POST' action='add_map.php?id=".$_GET['id']."' enctype='multipart/form-data' id='map_form' style='display:none'>
+                  <div class='form-group'>
+       
+        
+      
+     
+                        <textarea  placeholder='paste the google map embed link here' name='map'></textarea>
+                      
+                      </div>
+                      <div class='form-group'>
+                       
+                        
+                      
+                     
+                       <button type='submit' class='btn btn-success'>Save </button>
+                      
+                      </div>
+                     </form>";
+
+                      echo "<a class='btn btn-primary' id='map_button'>Add Google map Location</a>";
+       }
+
+       else{
+        echo "no map has been added yet";
+       }
+       }
+     }
+     else{
+      while ($row2=mysql_fetch_array($result2)) {
+        $map=$row2['link'];
+      
+      echo $map;
+    }
+
+     }
+
+
+     ?>
+
+     
+
+     
+    
+  </div>
+
     <div class="panel panel-default" id="rules">
               <h2 align="center">Rules</h2>
               <hr class="intro-divider" />
@@ -409,11 +490,12 @@ else{
                             while($row2=mysql_fetch_array($result2)){
                             $GLOBALS['fname']=$row2['fname'];
                             $pic=$row2['pic'];
+                           
                       
                        echo"
    <div class='media-body'>
    <div class='col-md-2'>
-   <img src='".$pic."' class='img-rounded' height='100' />
+   <img src='".$pic."' class='img-rounded' height='100' alt='No image' />
    <hr class='intro-divider'>
    ".$fname."
    </div>
@@ -625,6 +707,14 @@ else{
     <script src="../js/jquery-1.11.0.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $("#map_button").click(function(){
+        $("#map_form").toggle();
+    });
+});
+
+    </script>
 
     
   </body>

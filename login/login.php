@@ -2,9 +2,16 @@
 ob_start();
 include_once("../connection/connection.php");
 $usrnm=$_POST['usrnm'];
+$pswd=$_POST['pswd'];
 
 
-$psword=md5($_POST['pswd']);
+
+//$psword = stripslashes($psword);
+
+$psword = md5(mysql_real_escape_string($pswd));
+
+
+
 
 
 

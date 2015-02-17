@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,6 +22,7 @@
     <!-- bootstrap date-picker css -->
 
     <link rel="stylesheet" href="bootstrap-datepicker/css/datepicker.css">
+    
 
     
     
@@ -65,7 +71,7 @@
               <img src="images/logo.png" class="img-responsive"/>
             </div>
               <h3>List your property and host international friends</h3>
-             <a href="login/alt_login.php"class="btn btn-danger" id="host">Become a Host</a>
+             <a href="listing/post_listing.php"class="btn btn-danger" id="host">Become a Host</a>
              <hr class="intro-divider" />
 
               <div class="row" id="searchrow">

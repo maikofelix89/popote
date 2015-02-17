@@ -45,6 +45,9 @@
         </div>
     <div class="col-md-5">
         <h1 align="center">Login</h1>
+
+       
+
         <hr class="intro-divider"  />
         <form action="login.php" method="POST" enctype="multipart/form-data">
                           <div class="form-group">
@@ -59,9 +62,55 @@
                           <button class="btn btn-success btn-lg" type="submit" >Login</button>
                     </form>
 
+              <a href="#forgot" data-target="#forgot" data-toggle="modal" id="mybutton"> Forgot password?</a>
+
     </div>
 </div>
 </div>
+
+
+<!-- login modal -->
+
+    <div id="forgot" class="modal fade">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <div class="btn btn-danger pull-right" class="close" data-dismiss="modal" aria-hidden="true">Close</div>
+
+                    <h1 class="modal-title">Forgot Password</h1>
+
+                </div>
+
+                <div class="modal-body">
+
+                     <form action="pswd.php" method="POST" enctype="multipart/form-data">
+                          <div class="form-group">
+                              <label for="inputEmail">Enter the email or username you were using</label>
+                              <input type="text" class="form-control" name="email" id="inpuusername" placeholder="username">
+                          </div>
+                          
+                          
+                          <button class="btn btn-success btn-lg" type="submit" >Send</button>
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+  <!-- end of login modal -->
 
 
 
@@ -74,6 +123,9 @@
     <script src="../js/jquery-1.11.0.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
+
+
+    
 
     
   </body>

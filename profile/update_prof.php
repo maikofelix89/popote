@@ -27,7 +27,7 @@ $id=$_SESSION['id'];
 	 `tel_no`='$telno' WHERE  perm_id='$id'";
 $result=mysql_query($sql) or mysql_error();
 
-header('location:../profile/')
+header('location:../profile/myprofile.php');
 
 
 

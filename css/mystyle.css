@@ -1,5 +1,6 @@
 body{
-	background-image: url('../images/white.png');
+	/* background-image: url('../images/white.png'); */
+  background-color: #fcfcfc;
   font-family: 'Ubuntu';
 }
 

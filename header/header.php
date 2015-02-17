@@ -1,15 +1,6 @@
-<?php 
+<?php
 session_start();
- 
-
-
-
-
-
-
-
 ?>
-
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
