@@ -37,7 +37,7 @@ $count=mysql_num_rows($result);
                    
 
                     <li>
-                    <a href='' data-toggle='dropdown' class='dropdown-toggle'>Listings<i class='fa  fa-book fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
+                    <a href='' data-toggle='dropdown' class='dropdown-toggle' data-hover='dropdown'>Listings<i class='fa  fa-book fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
                                     <ul class='dropdown-menu'>
 
                                         <li><a href='../listing/post_listing.php'>Post Listing</a></li>
@@ -52,7 +52,7 @@ $count=mysql_num_rows($result);
                                      </ul>
                     </li>
                     <li>
-                    <a href='' data-toggle='dropdown' class='dropdown-toggle'>Account<i class='fa  fa-cogs fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
+                    <a href='' data-toggle='dropdown' class='dropdown-toggle' data-hover='dropdown'>Account<i class='fa  fa-cogs fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
                                     <ul class='dropdown-menu'>
 
                                         <li><a href='../profile/myprofile.php'>Profile</a></li>

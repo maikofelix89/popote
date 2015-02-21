@@ -6,24 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile</title>
 
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <?php include_once('../header/common.php'); ?>
+
+  
+   <!-- custom css -->
     
-    <!-- popote css -->
     <link href="../css/mystyle.css" rel="stylesheet">
     <link href="../css/nav.css" rel="stylesheet">
 
-    <!-- fonts -->
-    <link href="../font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- goofle fonts -->
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
-
-    <!-- jasny -->
-     <link href="../jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet" media="screen">
-    <link href="../jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+   
 
     <style type="text/css">
     #content{
@@ -150,17 +141,6 @@ echo "
 
 
 
-    <!-- jQuery Version 1.11.0 -->
-    <script src="../js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <script language="javascript" type="text/javascript" src="../datepicker/datetimepicker.js"></script>
-
-
-<!-- jasny -->
-    <script src="../jasny-bootstrap/js/jasny-bootstrap.js"></script>
-    <script src="../jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+   
 </body>
 </html>

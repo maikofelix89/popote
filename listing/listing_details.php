@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Popote Listings</title>
 
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap.css" rel="stylesheet">
+
+     <?php include_once('../header/common.php'); ?>
+
+   
     
     <!-- popote css -->
     <link href="../css/mystyle.css" rel="stylesheet">
@@ -16,11 +17,7 @@
     
    
 
-    <!-- fonts -->
-    <link href="../font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- goofle fonts -->
-<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    
 
     <style type="text/css">
     #content{
@@ -128,6 +125,21 @@ while($row2=mysql_fetch_array($result2)){
                     
                   </div>
             </div>
+             <div class="panel panel-default">
+            <div class="thumbnail">
+
+              <?php if(isset($_SESSION['usrnm'])) {
+                echo "
+             
+               <a href='#resmodal' class='btn btn-lg btn-success' data-toggle='modal'>Reserve</a>";
+             }
+             else{
+              echo "Please Log in to Reserve";
+             }
+             ?>
+
+            </div>
+          </div>
 
 	   </div>
 	   <div class="col-md-8">
@@ -628,6 +640,7 @@ else{
             
 
         </div>
+
         <div class="form-group" style="display:none">
              <?php echo  "<input type='text' class='form-control' id='inputEmail' name='from' value='".$_SESSION['id']."' />"; ?>
               <?php echo  "<input type='text' class='form-control' id='inputEmail' name='to' value='".$user_id."' />"; ?>
@@ -676,37 +689,70 @@ else{
 
     </div>
 
-<?php include_once('../footer/footer.php'); ?>
+     <!-- Modal HTML -->
+    <div id="resmodal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title">Make Reservation</h2>
+                </div>
+                <div class="modal-body">
+                  <form action="reserve.php" enctype="multipart/form-data" method="POST">
 
-
-
-
-
-
-      
-
-  
 
     
 
+        <div class="form-group">
+
+            <label for="inputEmail">Reserve from</label>
+
+            <input type="text" class="form-control" id="resfrom"name="resfrom" data-provide="datepicker" placeholder="Check in date">
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="inputPassword">Reserve to</label>
+
+            <input type="text" class="form-control" id="resto"name="resto" data-provide="datepicker" placeholder="Check out date">
+
+        </div>
+
+        <div class="form-group" style="display:none">
+
+          <?php $listing_id=$_GET['id']; 
+           echo "
+
+          <input type='text' name='user_id' value='".$_SESSION['id']."'></input>
+          <input type='text' name='listing_id' value='".$listing_id."'></input>
+
+          ";?>
+
+
+        </div>
+
+        
+
+        <button type="submit" class="btn btn-primary">Reserve</button>
+
+   
 
 
 
+                  </form>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
 
+<?php include_once('../footer/footer.php'); ?>
 
-
-
-
-
-
-
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery-1.11.0.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){
     $("#map_button").click(function(){
@@ -714,6 +760,18 @@ else{
     });
 });
 
+    </script>
+
+     <script type="text/javascript">
+      $('#resfrom').datepicker({
+   
+    startDate: '-d'
+})
+
+  $('#resto').datepicker({
+   
+    startDate: '-d'
+})
     </script>
 
     

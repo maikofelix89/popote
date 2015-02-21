@@ -22,6 +22,8 @@ session_start();
     <!-- bootstrap date-picker css -->
 
     <link rel="stylesheet" href="bootstrap-datepicker/css/datepicker.css">
+
+   
     
 
     
@@ -505,6 +507,8 @@ echo "
     <script src="js/jquery-1.11.0.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="bootstrap-hover/bootstrap-hover-dropdown-master/bootstrap-hover-dropdown.min.js"></script>
 
 
     <!-- bootstrap date-picker js -->

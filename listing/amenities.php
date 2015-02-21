@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Popote Listings</title>
 
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <?php include_once('../header/common.php'); ?>
+
+    
     
     <!-- popote css -->
     <link href="../css/mystyle.css" rel="stylesheet">
@@ -16,11 +17,7 @@
     
    
 
-    <!-- fonts -->
-    <link href="../font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- goofle fonts -->
-<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+   
 
     
   </head>

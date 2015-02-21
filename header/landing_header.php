@@ -3,7 +3,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"  data-target="#navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -32,7 +32,7 @@ $count=mysql_num_rows($result);
                         echo "<li>
                         <a href='message/view_message.php'><i class='fa  fa-envelope fa-fw'><i class='badge'>Inbox ".$count."</i></i><span class='network-name'></span> </a>
                             <li>
-                    <a href='' data-toggle='dropdown' class='dropdown-toggle'>Listings<i class='fa  fa-book fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
+                    <a href='' data-toggle='dropdown' class='dropdown-toggle' data-hover='dropdown'>Listings<i class='fa  fa-book fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
                                     <ul class='dropdown-menu'>
 
                                         <li><a href='listing/post_listing.php'>Post Listing</a></li>
@@ -47,7 +47,7 @@ $count=mysql_num_rows($result);
                                      </ul>
                     </li>
                     <li>
-                    <a href='' data-toggle='dropdown' class='dropdown-toggle'>Account<i class='fa  fa-cogs fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
+                    <a href='' data-toggle='dropdown' class='dropdown-toggle' data-hover='dropdown'>Account<i class='fa  fa-cogs fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
                                     <ul class='dropdown-menu'>
 
                                         <li><a href='profile/myprofile.php'>Profile</a></li>

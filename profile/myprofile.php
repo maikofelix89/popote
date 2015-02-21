@@ -6,23 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile</title>
 
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap.css" rel="stylesheet">
+     <?php include_once('../header/common.php'); ?>
+
+    
     
     <!-- popote css -->
     <link href="../css/mystyle.css" rel="stylesheet">
     <link href="../css/nav.css" rel="stylesheet">
-
-    <!-- fonts -->
-    <link href="../font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- goofle fonts -->
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-
-    <!-- jasny -->
-     <link href="../jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet" media="screen">
-    <link href="../jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -31,10 +21,13 @@
     <div class="container" id="content">
     	<div class="col-md-3" id="sidemenu">
     		<ul class="nav nav-pills nav-stacked">
-                <li ><a href="../profile/update_prof.php">Edit Profile</a></li>
-                <li ><a href="../profile/photo.php">Photo</a></li>
-                <li class="active"><a href="../profile/myprofile.php">My Profile</a></li>
-                 <li><a href="#">Reviews</a></li>
+                <li ><a href="index.php">Edit Profile</a></li>
+                <li ><a href="photo.php">Photo</a></li>
+                <li class="active"><a href="myprofile.php">My Profile</a></li>
+                 <ul  class="nav nav-pills nav-stacked">
+                 <li ><a href="my_reservations.php">My Reservations on other's listings</a></li>
+                 <li><a href="others_reservations.php">Reservations on my listing</a></li>
+                </ul>
             </ul>
     	</div>
 <?php
@@ -101,20 +94,5 @@ while($row=mysql_fetch_array($result)){
     </div>
     </div>
 
-
-
-
-	<!-- jQuery Version 1.11.0 -->
-    <script src="../js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <script language="javascript" type="text/javascript" src="../datepicker/datetimepicker.js"></script>
-
-
-<!-- jasny -->
-    <script src="../jasny-bootstrap/js/jasny-bootstrap.js"></script>
-    <script src="../jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
 </body>
 </html>
