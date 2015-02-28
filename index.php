@@ -304,7 +304,7 @@ session_start();
   </div>
   </div>
   <div class="row" id="popular">
-    <h1 align="center">Popular Listings</h1>
+    <h1 align="center">Latest Listings</h1>
     <hr class="intro-divider" />
     <div class="col-md-12">
 

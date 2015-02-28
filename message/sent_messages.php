@@ -36,6 +36,9 @@
   </head>
   <body>
 <?php include_once('../header/header.php');
+if(!isset($_SESSION['id'])){
+    header('location:../login/alt_login.php');
+}
  ?>
 <div class="container" id="content">
     <div class="row">

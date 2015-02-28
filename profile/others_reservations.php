@@ -16,7 +16,14 @@
 </head>
 
 <body>
-	<?php include_once('../header/header.php'); ?>
+	<?php include_once('../header/header.php'); 
+
+  if(!isset($_SESSION['id'])){
+    header('location:../login/alt_login.php');
+}
+
+
+  ?>
     <div class="row">
     <div class="container" id="content">
      
@@ -33,6 +40,7 @@
     	</div>
 
         <div class="col-md-8">
+       
 
 <?php
 require_once('../connection/connection.php');
@@ -110,7 +118,7 @@ while($row=mysql_fetch_array($result)){
 
            <a href='delete_res.php?res=".$res_id."'>Delete</a>
            <a href='../listing/listing_details.php?id=".$listing_id."'>View Listing</a>
-           <a href='../listing/listing_details.php?id=".$listing_id."'>Approve</a>
+           <a href='../listing/approve_res.php?id=".$res_id."'>Approve</a>
 
 
 
@@ -133,8 +141,7 @@ while($row=mysql_fetch_array($result)){
    
 
 ?>
-    	
-    		
+      
     	</div>
     </div>
     </div>

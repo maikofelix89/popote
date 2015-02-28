@@ -23,7 +23,12 @@
   </head>
   <body>
 
-<?php include_once('../header/header.php'); ?>
+<?php include_once('../header/header.php');
+if(!isset($_SESSION['id'])){
+    header('location:../login/alt_login.php');
+}
+
+ ?>
 <div class="container" id="content">
   <h1 align="center">Just a few more details..</h1>
 

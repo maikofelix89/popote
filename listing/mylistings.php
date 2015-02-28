@@ -110,6 +110,8 @@ echo "
             <!-- <p>Availability:Yes</p> -->
             <p>".$per_night."". $currency."".$pricing_method."</p>
         <a href='listing_details.php?id=".$id."' class='btn btn-primary btn-lg'>Details</a>
+        <a href='edit_listing.php?id=".$id."' class='btn btn-success'>Edit</a>
+        <a href='del_listing.php?id=".$id."' class='btn btn-danger'>Delete</a>
         </div>
     </div>
 

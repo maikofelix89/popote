@@ -16,7 +16,14 @@
 </head>
 
 <body>
-	<?php include_once('../header/header.php'); ?>
+	<?php include_once('../header/header.php');
+
+  if(!isset($_SESSION['id'])){
+    header('location:../login/alt_login.php');
+}
+
+
+   ?>
     <div class="row">
     <div class="container">
     	<div class="col-md-3" id="sidemenu">
@@ -50,6 +57,15 @@ while($row=mysql_fetch_array($result)){
     $listing_id=$row['listing_id'];
     $resfrom=$row['res_from'];
     $resto=$row['res_to'];
+    $approved=$row['approved'];
+
+    if($approved=="t"){
+      $status="Approved";
+    }
+
+    else{
+      $status="Pending Approval";
+    }
 
 
     $sql2="SELECT * FROM listings WHERE id='$listing_id'";
@@ -72,25 +88,34 @@ while($row=mysql_fetch_array($result)){
            echo"
 
            <div class='panel panel-default col-md-6'>
-           <div class='panel-body'>
-          
-           <p>".$home_type."</p>
-           <p>".$per_night.$currency.$pricing_method."</p>
-           <p>".$city."</p>
-           <p>Available from:". $checkin." To: ".$checkout."</p>
-           <hr class='intro-divider' />
-           <p>You reservation dates</p>
-           <p>Checkin ".$resfrom."</p>
-           <p>Check out ".$resto."</p>
+                       <div class='panel-body'>
+                      
+                       <p>".$home_type."</p>
+                       <p>".$per_night.$currency.$pricing_method."</p>
+                       <p>".$city."</p>
+                       <p>Available from:". $checkin." To: ".$checkout."</p>
+                       <hr class='intro-divider' />
+                       <p>You reservation dates</p>
+                       <p>Checkin ".$resfrom."</p>
+                       <p>Check out ".$resto."</p>
+                       <p>Status: ".$status."</p>
 
-           </div>
-           <div class='panel-footer'>
-
-           <a href='delete_res.php?res=".$res_id."'>Delete</a>
-           <a href='../listing/listing_details.php?id=".$id."'>View Listing</a>
+                      
 
 
-           </div>
+                      </div>
+                         <div class='panel-footer'>
+
+                         <a href='delete_res.php?res=".$res_id."'>Delete</a>
+                         <a href='../listing/listing_details.php?id=".$id."'>View Listing</a>
+                        
+                         
+                         <a href='../profile/pay.php?id=".$id."'>Pay for Reservation</a>
+                      
+                      
+
+
+                         </div>
 
            </div>
           

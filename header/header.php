@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -51,24 +52,10 @@ $count=mysql_num_rows($result);
 
                                      </ul>
                     </li>
+                   
+                    
+                    
                     <li>
-                    <a href='' data-toggle='dropdown' class='dropdown-toggle' data-hover='dropdown'>Account<i class='fa  fa-cogs fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
-                                    <ul class='dropdown-menu'>
-
-                                        <li><a href='../profile/myprofile.php'>Profile</a></li>
-
-                                        <li><a href='mylistings.php'>Settings</a></li>
-                                        
-
-                                        
-
-                    
-
-                                     </ul>
-                    </li>
-                    
-                    
-                    <li >
 
 
 

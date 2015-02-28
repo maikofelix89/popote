@@ -16,7 +16,13 @@
 </head>
 
 <body>
-	<?php include_once('../header/header.php'); ?>
+	<?php include_once('../header/header.php'); 
+  if(!isset($_SESSION['id'])){
+    header('location:../login/alt_login.php');
+}
+
+
+  ?>
     <div class="row">
     <div class="container" id="content">
     	<div class="col-md-3" id="sidemenu">
@@ -32,11 +38,22 @@
     	</div>
 <?php
 require_once('../connection/connection.php');
+
+
+
 $my_id=$_SESSION['id'];
 
 
 $sql="SELECT * FROM `perm_user` WHERE perm_id='$my_id'";
 $result=mysql_query($sql);
+
+$count=mysql_num_rows($result);
+
+if($count==1){
+
+
+
+
 
 
 
@@ -54,43 +71,49 @@ while($row=mysql_fetch_array($result)){
 
 }
 
-   
-
-?>
-    	<div class="col-md-8">
+echo "<div class='col-md-8'>
 
             <h1>My Profile</h1>
-            <hr class="intro-divider" />
-            <div class="panel panel-default">
-              <div class="panel-heading"></div>
+            <hr class='intro-divider' />
+            <div class='panel panel-default'>
+              <div class='panel-heading'></div>
               
               
           
-              <div class="panel-body">
-                <div class="col-md-4">
-                <div class="thumbnail">
-                <div class="caption">
-            <?php echo "<img src='".$pic."' class='img-rounded' />"; ?>
+              <div class='panel-body'>
+                        <div class='col-md-4'>
+                        <div class='thumbnail'>
+                        <div class='caption'>
+                    <img src='".$pic."' class='img-rounded' />
 
-                </div>
-               </div>
-              </div>
-              <div class="col-md-8">
-                <p>Name : <?php echo $fname." ".$l_name; ?></p>
-                <p>Email : <?php echo $email; ?></p>
-                <p>Tel : <?php echo $tel; ?></p>
-                <p>Name : <?php echo $fname." ".$l_name; ?></p>
-                 <p><br></br>
-                 <blockquote>
-                     I am very awesome
-                 </blockquote> 
+                        </div>
+                       </div>
+                      </div>
+                        <div class='col-md-8'>
+                          <p>Name :".$fname."".$l_name."</p>
+                          <p>Email :".$email."</p>
+                          <p>Tel : ".$tel."</p>
+                          <p>Name : ".$fname."".$l_name."</p>
+                           <p><br></br>
+                           
 
-                 </p>
-              </div>
+                           </p>
+                        </div>
               </div>
             </div>
-    		
-    	</div>
+        
+      </div>";
+    }
+
+    else{
+      echo "
+      <div class='alert alert-danger'>You havent't completed your profile yet</div>";
+    }
+
+   
+
+?>
+    	
     </div>
     </div>
 

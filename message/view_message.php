@@ -50,6 +50,12 @@
         <div class="col-md-8">
 <?php
 require_once('../connection/connection.php');
+
+if(!isset($_SESSION['id'])){
+    header('location:../login/alt_login.php');
+}
+else{
+
 $id=$_SESSION['id'];
 
 $sql="SELECT * FROM `messages` WHERE recepient='$id' ORDER BY `message_id` DESC ";
@@ -184,6 +190,7 @@ while($row2=mysql_fetch_array($result2)){
 
 
            
+}
 }
 ?>
 

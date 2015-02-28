@@ -9,7 +9,7 @@ $res_to=$_POST['resto'];
 $date = date('Y-m-d H:i:s');
 
 
-echo $res_from.$res_to;
+
 
 
 

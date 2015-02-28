@@ -13,36 +13,38 @@ $conf_link=crypt($myno+$fname+$password);
 
 
 
-$sql2="SELECT * FROM perm_user WHERE usrnm='$username'";
-$result2=mysql_query($sql2);
-$count2=mysql_num_rows($result2);
-if($count2==0){
+$sql="SELECT * FROM perm_user WHERE usrnm='$username'";
+$result=mysql_query($sql) or die(mysql_error());
+$count=mysql_num_rows($result);
+if($count==0){
 
-				$sql3="SELECT * FROM perm_user WHERE email='$email'";
-				$result3=mysql_query($sql3);
-				$count3=mysql_num_rows($result3);
+				$sql1="SELECT * FROM perm_user WHERE email='$email'";
+				$result1=mysql_query($sql1) or die(mysql_error());
+				$count1=mysql_num_rows($result1);
 
-				if($count3==0){
+				if($count1==0){
 
-									$sql="INSERT INTO `reg_temp` (`temp_id`, `temp_fname`, `temp_lname`, `temp_usrnm`, `temp_email`, `temp_pswd`,`conf_link`)
+									$sql3="INSERT INTO `reg_temp` (`temp_id`, `temp_fname`, `temp_lname`, `temp_usrnm`, `temp_email`, `temp_pswd`,`conf_link`)
 									 VALUES (NULL, '$fname', '$lname', '$username', '$email', '$password','$conf_link')";
 
-									$result=mysql_query($sql);
-									//$msg ='http://www.felixmaiko.com/popote/confirm.php?conf='.$conf_link;
+									$result3=mysql_query($sql3) or die(mysql_error());
+									//$msg ='http://www.popotelistings.com/confirm.php?conf='.$conf_link;
+
 
 									$msg ='../confirm.php?conf='.$conf_link;
-									echo $msg;
-
-									header('location:'.$msg);
-
-
-
-
 
 									//send email
-									mail($email,"Welcome to  
-										Popote Listings",$msg);
-									}
+									mail($email,"Welcome to Popote Listings",$msg);
+
+									
+
+									//header('location:');
+
+
+
+
+
+									
 
 			else{
 				echo "only one email per account";

@@ -95,8 +95,10 @@ while($row2=mysql_fetch_array($result2)){
               <h2 align="center">Amenities</h2>
               <hr class="intro-divider" />
               <div class="panel-body">
+
                <?php
                require_once('../connection/connection.php');
+              
                $id=$_GET['id'];
 
                $sql5="SELECT * FROM `listing_amenities` WHERE listing_id='$id'";
@@ -105,7 +107,13 @@ while($row2=mysql_fetch_array($result2)){
                 $count=mysql_num_rows($result5);
 
                 if($count==0){
+
+                    if(isset($_SESSION['id'])){
                   echo "<a href='amenities.php?id=".$id."' class='btn btn-primary'>Add Amenities</a>";
+                     }
+                     else{
+
+                     }
                 }
 
                 else{
@@ -117,6 +125,9 @@ while($row2=mysql_fetch_array($result2)){
 
                 }
               }
+
+          
+
 
 
            
@@ -150,6 +161,7 @@ while($row2=mysql_fetch_array($result2)){
 			  <div class="panel-body">
 <?php
 require_once('../connection/connection.php');
+
 $id=$_GET['id'];
 
 $sql="SELECT * FROM `listings` WHERE id='$id'";
@@ -159,7 +171,7 @@ $result=mysql_query($sql);
 
 
 while($row=mysql_fetch_array($result)){
-	$listing_id=$row['id'];
+	  $listing_id=$row['id'];
     $home_type=$row['home_type'];
     $room_type=$row['room_type'];
     $city=$row['city'];
@@ -277,7 +289,7 @@ while($row=mysql_fetch_array($result)){
       <select name="rating">
        <?php 
 
-      
+       
 
       
        for ($i = 1; $i <= 10; $i++) {
@@ -360,7 +372,7 @@ else{
      <hr class="intro-divider" />
      <?php 
 
-      $user_id=$_SESSION['id'];
+     
       $listing_id=$_GET['id'];
       include_once('../connection/connection.php');
 
@@ -379,6 +391,9 @@ else{
          $count=mysql_num_rows($result);
 
               while($row=mysql_fetch_array($result)){
+
+          if(isset($_SESSION['id'])){
+
               $user_id=$row['user_id'];
 
               if($user_id==$_SESSION['id']){
@@ -403,6 +418,7 @@ else{
 
                       echo "<a class='btn btn-primary' id='map_button'>Add Google map Location</a>";
        }
+     }
 
        else{
         echo "no map has been added yet";

@@ -45,7 +45,7 @@ header("location:../");
 }
 else {
 echo "Wrong Username or Password";
-header("location:../login/alt_login.php");
+header("location:../login/alt_login2.php");
 }
 ob_end_flush();
 ?>

@@ -46,21 +46,7 @@ $count=mysql_num_rows($result);
 
                                      </ul>
                     </li>
-                    <li>
-                    <a href='' data-toggle='dropdown' class='dropdown-toggle' data-hover='dropdown'>Account<i class='fa  fa-cogs fa-fw'></i> <span class='network-name'></span> <b class='caret'></b></a>
-                                    <ul class='dropdown-menu'>
-
-                                        <li><a href='profile/myprofile.php'>Profile</a></li>
-
-                                       
-                                        
-
-                                        
-
-                    
-
-                                     </ul>
-                    </li>
+                   
                         ";
                     }
                     else{
@@ -86,7 +72,7 @@ $count=mysql_num_rows($result);
                             ";
      
 } else{
-   echo "<li><a href='#''>".$_SESSION['usrnm']."<i class='fa  fa-user fa-fw'></i> <span class='network-name'></span> </a></li>
+   echo "<li><a href='profile/myprofile.php'>".$_SESSION['usrnm']."<i class='fa  fa-user fa-fw'></i> <span class='network-name'></span> </a></li>
    <li>
     <a href='logout/logout.php'>Log Out<i class='fa  fa-power-off fa-fw'></i> <span class='network-name'></span> </a>
                     </li>";

@@ -17,7 +17,14 @@
 </head>
 
 <body>
-  <?php include_once('../header/header.php'); ?>
+  <?php include_once('../header/header.php'); 
+
+  if(!isset($_SESSION['id'])){
+    header('location:../login/alt_login.php');
+}
+
+
+  ?>
     <div class="row">
 
     <div class="container">
@@ -26,7 +33,10 @@
                 <li ><a href="../profile/index.php">Edit Profile</a></li>
                 <li class="active"><a href="../profile/photo.php">Photo</a></li>
                 <li ><a href="../profile/myprofile.php">My Profile</a></li>
-                 <li><a href="#">Reviews</a></li>
+                <ul  class="nav nav-pills nav-stacked">
+                 <li><a href="my_reservations.php">My Reservations on other's listings</a></li>
+                 <li><a href="others_reservations.php">Reservations on my listing</a></li>
+                </ul>
             </ul>
       </div>
 <?php
